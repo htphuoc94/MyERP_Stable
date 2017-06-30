@@ -22,7 +22,7 @@
       </li>
       <li><label><?php echo gettext('Inventory') ?></label><?php echo $f->select_field_from_object('org_id', org::find_all_inventory(), 'org_id', 'org', $$class->org_id, 'org_id', '', 1, $readonly1); ?>       </li>
       <li><?php echo $f->l_select_field_from_array('transaction_type_id', inv_interorg_receipt_header::$transaction_type_id_a, $$class->transaction_type_id, 'transaction_type_id', '', 1, $readonly1); ?>       </li>
-      <li><?php echo $f->l_number_field('receipt_number', $$class->receipt_number, '8', '', 'primary_column2', '', $readonly1); ?></li>
+      <li><?php echo $f->l_text_field('receipt_number', $$class->receipt_number, '', 'receipt_number', 'primary_column2', '', $readonly1); ?></li>
       <li><?php echo $f->l_date_fieldFromToday('receipt_date', ino_date($$class->receipt_date), $readonly1); ?></li>      
      </ul>
     </div>

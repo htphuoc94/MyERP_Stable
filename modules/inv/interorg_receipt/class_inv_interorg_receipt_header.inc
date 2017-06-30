@@ -51,7 +51,7 @@ inv_receipt_header_id,  receipt_number,   org_id,   transaction_type_id,
   created_by,   creation_date,   last_update_by,   last_update_date
 )
 AS
-SELECT 
+
 SELECT * FROM inv_receipt_header
 WHERE transaction_type_id = '20'
 

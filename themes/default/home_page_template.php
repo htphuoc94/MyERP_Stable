@@ -42,11 +42,11 @@ include_once("includes/functions/loader.inc");
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php
   if (!empty($metaname_description)) {
-   echo "<meta name='description' content=\"inoERP - A Open Source PHP based Enterprise Management System\">";
+   echo "<meta name='description' content=\"MyERP - A Open Source PHP based Enterprise Management System\">";
   }
   ?>
   <meta name="keywords" content="ERP,PHP ERP,Open Source ERP ">
-  <title><?php echo isset($pageTitle) ? $pageTitle . ' - inoERP!' : ' inoERP! ' ?></title>
+  <title><?php echo isset($pageTitle) ? $pageTitle . ' - MyERP!' : ' MyERP! ' ?></title>
   <link rel="shortcut icon" type="image/x-icon" href="files/favicon.ico">
   <link href="<?php
 //  echo THEME_URL;
@@ -165,7 +165,292 @@ include_once("includes/functions/loader.inc");
    return;
   }
   ?>
+
   <!-- end grey-wrapper -->
+
+  <div class="jt-shadow white-wrapper first_content">
+      <div class="container">
+          <div class="col-md-6">
+              <div class="embed-responsive embed-responsive-16by9">
+                  <img src="files/inoerp_dashboard.PNG" class="img-responsive" alt="inoERP Dashboard Image">
+              </div>
+
+              <!--  </div><!-- end accordion first -->
+              <!--  </div> --><!-- end widget -->
+          </div><!-- end col-lg-6 -->
+          <div class="col-md-5 ">
+              <div class="release_message">
+      <span class="longHeading">MyERP là một hệ thống web dựa trên hệ thống quản lý doanh nghiệp tổng thể.
+        <br>
+       Mục tiêu của hệ thống MyERP là cung cấp <span class="text-success">một hệ thống kéo động dựa trên các giao dịch tự động </span>(using IOT & RFID)
+      </span>
+                  <span class="heading">MyERP 0.1 </span>
+                  MyERP version 0.1 được phát hành ngày 01/05/2017 dựa trên hệ thống mã nguồn mở InoERP
+                  <br>
+                  <form action="https://www.google.com" id="cse-search-box" target="_blank">
+                      <div>
+                          <input type="hidden" name="cx" value="partner-pub-3081028146173931:7997050045" />
+                          <input type="hidden" name="ie" value="UTF-8" />
+                          <input type="text" name="q" size="40" />
+                          <input type="submit" name="sa" value="Search" />
+                      </div>
+                  </form>
+                  <script type="text/javascript" src="https://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+
+              </div>
+          </div><!-- end col-lg-6 -->
+      </div><!-- end container -->
+  </div>
+
+  <div class="grey-wrapper jt-shadow no-padding-imp">
+      <div class="container">
+          <div class="text-center text-warning"><h1> Modules & Extensions</h1></div>
+          <div class="col-md-4 col-sm-6">
+              <div class="panel panel-ino-light-grey">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading  text-center large-text-bold"><i class="fa fa-bank"></i> Tài chính</div>
+                  <div class="panel-body">
+                      <ul class="list-group">
+                          <li class="list-group-item">Khoản phải trả</li>
+                          <li class="list-group-item">Khoản phải thu</li>
+                          <li class="list-group-item">Tài sản cố định</li>
+                          <li class="list-group-item">Sổ cái</li>
+                          <li class="list-group-item">Hóa đơn dự án</li>
+                          <li class="list-group-item">Chi phí dự án</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+
+          <div class="col-md-4 col-sm-6">
+              <div class="panel panel-ino-light-grey">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading text-center large-text-bold"><i class="fa fa-truck"></i> Chuỗi cung ứng</div>
+                  <div class="panel-body">
+                      <ul class="list-group">
+                          <li class="list-group-item">Bán hàng</li>
+                          <li class="list-group-item">Kho</li>
+                          <li class="list-group-item">Mua sắm</li>
+                          <li class="list-group-item">Dự báo và lặp KH</li>
+                          <li class="list-group-item">Điểm bán lẻ</li>
+                          <li class="list-group-item">Thương mại điện tử</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+              <div class="panel panel-ino-light-grey">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading text-center large-text-bold"><i class="fa fa-cogs"></i> Sản xuất</div>
+                  <div class="panel-body">
+                      <ul class="list-group">
+                          <li class="list-group-item">Nguyên vật liệu</li>
+                          <li class="list-group-item">Công thức</li>
+                          <li class="list-group-item">Quản lý giá thành</li>
+                          <li class="list-group-item">Chất lượng</li>
+                          <li class="list-group-item">Tiến trình sản xuất</li>
+                          <li class="list-group-item">Thực thi sản xuất</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+              <div class="panel panel-ino-light-grey">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading text-center large-text-bold"><i class="fa fa-life-bouy"></i> Dịch vụ & hỗ trợ</div>
+                  <div class="panel-body">
+                      <ul class="list-group">
+                          <li class="list-group-item">Hợp đồng dịch vụ</li>
+                          <li class="list-group-item">Help Desk</li>
+                          <li class="list-group-item">Quản lý thay đổi</li>
+                          <li class="list-group-item">Quản lý tài liệu</li>
+                          <li class="list-group-item">Bảo trì tài sản</li>
+                          <li class="list-group-item">RFID & Barcode</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+              <div class="panel panel-ino-light-grey">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading text-center large-text-bold"><i class="fa fa-users"></i> Nhân sự</div>
+                  <div class="panel-body">
+                      <ul class="list-group">
+                          <li class="list-group-item">Nhân viên</li>
+                          <li class="list-group-item">Compensation, Payroll & Expense</li>
+                          <li class="list-group-item">Approval Process</li>
+                          <li class="list-group-item">Timesheet & Leave Management</li>
+                          <li class="list-group-item">Self Service</li>
+                          <li class="list-group-item">Work Structure</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+
+          <div class="col-md-4 col-sm-6">
+              <div class="panel panel-ino-light-grey">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading  text-center large-text-bold"><i class="fa fa-sliders"></i> Mở rộng</div>
+                  <div class="panel-body">
+                      <ul class="list-group">
+                          <li class="list-group-item">User, Role & Group</li=>
+                          <li class="list-group-item">Quản trị nội dung</li>
+                          <li class="list-group-item">Thông báo, eMail & Chat</li>
+                          <li class="list-group-item">Site, Theme & Blocks</li>
+                          <li class="list-group-item">Custom Form, Reports, Menus</li>
+                          <li class="list-group-item">...Many More..</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+  </div>
+
+  <div class="green-wrapper jt-shadow padding-top">
+      <div class="container">
+          <div id="slider_msg">
+              <div id="slider1_container" style="position: relative; width: 900px; height: 400px; overflow: hidden;">
+
+                  <!-- Loading Screen -->
+                  <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                      <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+            background-color: #000; top: 0px; left: 0px;width: 100%;height:100%;">
+                      </div>
+                      <div style="position: absolute; display: block; background: url(files/images/loading.gif) no-repeat center center;
+            top: 0px; left: 0px;width: 100%;height:100%;">
+                      </div>
+                  </div>
+
+                  <!-- Slides Container -->
+                  <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 900px; height: 400px;
+           overflow: hidden;">
+                      <div>
+                          <a u=image href="#"><img src="files/images/landscape/simple_ui1.png" /></a>
+                          <div u=caption t="*" class="captionOrange"  style="position:absolute; left:600px; top: 30px; width:300px; height:250px;">
+                              Simple & Consistent User Interface across all the document forms, reports and search forms. <br>
+                          </div>
+                      </div>
+                      <div>
+                          <a u=image href="#"><img src="files/images/landscape/easy_navigation1.png" /></a>
+                          <div u=caption t="*" class="captionOrange"  style="position:absolute; left:600px; top: 30px; width:300px; height:300px;">
+                              Easy Navigation - Laptop, Tablet & Mobile. <br> Easy data entry through barcode enabled forms and labels.
+                          </div>
+                      </div>
+                      <div>
+                          <a u=image href="#"><img src="files/images/landscape/dynamic_search1.png" /></a>
+                          <div u=caption t="*" class="captionOrange"  style="position:absolute; left:600px; top: 30px; width:300px; height:300px;">
+                              Powerful & Dynamic Searching Capabilities. <br>Can be customized on the fly to suit various business requirements.
+                          </div>
+                      </div>
+                      <div>
+                          <a u=image href="#"><img src="files/images/landscape/graphical_reports.gif" /></a>
+                          <div u=caption t="*" class="captionOrange"  style="position:absolute; left:600px; top: 30px; width:300px; height:330px;">
+                              Text & Visual Reporting. Visual reports are dynamically generated SVG images. <br>Text reports can be downloaded in any format, such as
+                              Excel, Pdf, Word Doc & etc.
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Bullet Navigator Skin Begin -->
+                  <!-- jssor slider bullet navigator skin 01 -->
+
+                  <!-- bullet navigator container -->
+                  <div u="navigator" class="jssorb01" style="position: absolute; bottom: 16px; right: 10px;">
+                      <!-- bullet navigator item prototype -->
+                      <div u="prototype" style="POSITION: absolute; WIDTH: 12px; HEIGHT: 12px;"></div>
+                  </div>
+                  <!-- Bullet Navigator Skin End -->
+
+                  <!-- Arrow Navigator Skin Begin -->
+
+                  <!-- Arrow Left -->
+                  <span u="arrowleft" class="jssora05l" style="width: 40px; height: 40px; top: 123px; left: 8px;">
+      </span>
+                  <!-- Arrow Right -->
+                  <span u="arrowright" class="jssora05r" style="width: 40px; height: 40px; top: 123px; right: 8px">
+      </span>
+
+              </div>
+          </div>
+
+      </div>
+  </div>
+
+
+  <div class="white-wrapper no-padding-imp">
+      <div class="container">
+          <div style="text-align:center;"> <h1>Các tính năng đặc biệt</h1></div>
+          <div class="services_vertical">
+              <div class="col-sm-6">
+                  <div class="service_vertical_box">
+                      <div class="service-icon">
+                          <i class="fa fa-lightbulb-o fa-4x"></i>
+                      </div>
+                      <h3>Hệ thống kéo động</h3>
+                      <p>
+                          Hệ thống kéo động là phiên bản nâng cao của hệ thống kéo, nó đã bao gồm những tính năng nâng cao của hệ thống kéo truyền thống. </p>
+                  </div><!-- end service_vertical_box -->
+              </div><!-- end col-lg-4 -->
+              <div class="col-sm-6">
+                  <div class="service_vertical_box">
+                      <div class="service-icon">
+                          <i class="fa fa-cogs fa-4x"></i>
+                      </div>
+                      <h3>Xây dựng báo cáo</h3>
+                      <p>Hệ thống hỗ trợ xây dựng các câu truy vấn kéo thả, mà có thể tạo nhiều loại báo cáo khác nhau mà không cần phải lập trình  </p>
+                  </div><!-- end service_vertical_box -->
+              </div><!-- end col-lg-4 -->
+              <div class="col-sm-6">
+                  <div class="service_vertical_box">
+                      <div class="service-icon">
+                          <i class="fa fa-tablet fa-4x"></i>
+                      </div>
+                      <h3>Tương thích các loại thiết bị</h3>
+                      <p>MyERP có thể sử dụng với các trình duyệt trên desktop, laptop & thiết bị di động. </p>
+                      <a href="#" class="readmore">Read More...</a>
+                  </div><!-- end service_vertical_box -->
+              </div><!-- end col-lg-4 -->
+              <div class="col-sm-6">
+                  <div class="service_vertical_box">
+                      <div class="service-icon">
+                          <i class="fa fa-crosshairs fa-4x"></i>
+                      </div>
+                      <h3>End to End System</h3>
+                      <p>Có thể sử dụng như một hệ thống đơn chuỗi cung ứng, tài chính, tài liệu, nhân sự, sản xuất kinh doanh. </p>
+                  </div><!-- end service_vertical_box -->
+              </div><!-- end col-lg-4 -->
+              <div class="col-sm-6">
+                  <div class="service_vertical_box">
+                      <div class="service-icon">
+                          <i class="fa fa-users fa-4x"></i>
+                      </div>
+                      <h3>Quản trị nội dung </h3>
+                      <p>Hệ thống quản trị nội dung được tích hợp với hệ thống ERP. Có thể sử dụng cho nhân viên, nhà cung cấp và khách hàng </p>
+                      <!--<a href="#" class="readmore">Read More...</a>-->
+                  </div><!-- end service_vertical_box -->
+              </div><!-- end col-lg-4 -->
+              <div class="col-sm-6">
+                  <div class="service_vertical_box">
+                      <div class="service-icon">
+                          <i class="fa fa-bars fa-4x"></i>
+                      </div>
+                      <h3>Kiến trúc linh hoạt</h3>
+                      <p>Tất cả forms, báo cáo & tài liệu đủ linh hoạt để đáp ứng các yêu cầu của doanh nghiệp. </p>
+                      <!--<a href="#" class="readmore">Read More...</a>-->
+                  </div><!-- end service_vertical_box -->
+              </div><!-- end col-lg-4 -->
+              <div class="clearfix"></div>
+          </div><!-- end services_vertical -->
+      </div><!-- end container -->
+  </div><!-- end transparent-bg -->
+
   <div class="jt-shadow grey-wrapper first_content padding-top content_summary">
    <div class="make-center wow fadeInUp animated" style="visibility: visible;">
     <div class="container">
@@ -261,7 +546,7 @@ include_once("includes/functions/loader.inc");
 
       </ul>
      </div>
-    </div><!-- end large-7 --> 
+    </div><!-- end large-7 -->
    </div><!-- end container -->
   </div>
   <div class="dmtop"><?php echo gettext('Scroll to Top'); ?></div>
