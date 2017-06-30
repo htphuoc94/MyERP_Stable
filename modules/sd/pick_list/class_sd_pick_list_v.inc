@@ -238,26 +238,20 @@ item.item_number, item.uom_id, item.item_status, item.serial_generation,item.lot
 org.org, sdsl.shipping_org_id,
 sdsl.created_by, sdsl.creation_date, sdsl.last_update_by, sdsl.last_update_date
 FROM sd_so_header sdsh
-LEFT JOIN payment_term ON sdsh.payment_term_id = payment_term.payment_term_id,
-ar_customer, 
-ar_customer_site, 
-sd_so_line sdsl
-LEFT JOIN onhand_summary_v osv ON osv.item_id_m = sdsl.item_id_m AND osv.org_id = sdsl.shipping_org_id,
-item,
-org,
-sd_shipping_control ssc 
+LEFT JOIN payment_term ON sdsh.payment_term_id = payment_term.payment_term_id
+left join ar_customer on sdsh.ar_customer_id = ar_customer.ar_customer_id
+left join ar_customer_site on sdsh.ar_customer_site_id = ar_customer_site.ar_customer_site_id
+left join sd_so_line sdsl on sdsh.sd_so_header_id = sdsl.sd_so_header_id
+LEFT JOIN onhand_summary_v osv ON osv.item_id_m = sdsl.item_id_m AND osv.org_id = sdsl.shipping_org_id
+left join item on sdsl.item_id_m = item.item_id_m AND item.org_id = sdsl.shipping_org_id
+left join org on sdsl.shipping_org_id = org.org_id
+left join sd_shipping_control ssc on  ssc.org_id = sdsl.shipping_org_id
 LEFT JOIN subinventory ON subinventory.subinventory_id = ssc.staging_subinventory_id
 LEFT JOIN locator ON locator.locator_id = ssc.staging_locator_id
 
 WHERE
-sdsh.sd_so_header_id = sdsl.sd_so_header_id
-AND sdsh.ar_customer_id = ar_customer.ar_customer_id
-AND sdsh.ar_customer_site_id = ar_customer_site.ar_customer_site_id
-AND sdsl.item_id_m = item.item_id_m AND item.org_id = sdsl.shipping_org_id
-AND sdsl.shipping_org_id = org.org_id
-AND ssc.org_id = sdsl.shipping_org_id
-AND sdsh.so_status = 'BOOKED'
-AND sdsl.line_status IN ('AWAITING_PICKING', 'PARTIAL_PICKED','PARTIAL_SHIPPED')
+sdsh.so_status = 'BOOKED'
+ AND  sdsl.line_status IN ('AWAITING_PICKING', 'PARTIAL_PICKED','PARTIAL_SHIPPED')
 
 ";
  }

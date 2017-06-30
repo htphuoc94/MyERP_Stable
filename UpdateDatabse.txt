@@ -1,0 +1,13 @@
+RENAME inv_intorg_transfer_header TO inv_interorg_transfer_header
+RENAME inv_intorg_transfer_line TO inv_interorg_transfer_line
+
+
+UPDATE path set path_link='form.php?class_name=inv_interorg_receipt_header&mode=9' WHERE path_id=768
+UPDATE path SET path_link='form.php?class_name=inv_interorg_transfer_header&mode=9' WHERE path_id=375
+
+
+ALTER TABLE inv_interorg_transfer_header CHANGE inv_intorg_transfer_header_id inv_interorg_transfer_header_id INT NOT NULL
+ALTER TABLE inv_interorg_transfer_line CHANGE inv_intorg_transfer_line_id inv_interorg_transfer_line_id INT NOT NULL
+ALTER TABLE inv_interorg_transfer_line CHANGE inv_intorg_transfer_header_id inv_interorg_transfer_header_id INT NOT NULL
+ALTER TABLE inv_receipt_line CHANGE inv_intorg_transfer_line_id inv_interorg_transfer_line_id INT NOT NULL
+ALTER TABLE inv_receipt_line CHANGE inv_intorg_transfer_header_id inv_interorg_transfer_header_id INT NOT NULL

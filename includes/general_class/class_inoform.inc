@@ -173,7 +173,7 @@ class inoform {
   'inv_abc_assignment_line',
   'inv_abc_valuation',
   'inv_abc_valuation_result',
-  'inv_item_revision',
+  'inv_item_revision', 
   'inv_location_default',
   'item',
   'locator',
