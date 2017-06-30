@@ -139,7 +139,7 @@ ORDER BY gp.gl_period_id DESC
 
  public static function find_balance_between_accounts($account_l, $account_u, $gl_period_id = '') {
 
-  $sql = " SELECT field1, field4, ledger_id, period_id, ( IFNULL(period_net_dr,0) - IFNULL(period_net_cr,0) "
+  $sql = " SELECT field1, field4, ledger_id, period_id, IFNULL(begin_balance_dr,0) as begin_balance_dr, IFNULL(begin_balance_cr,0) as begin_balance_cr, IFNULL(period_net_dr,0) as period_net_dr, IFNULL(period_net_cr,0) as period_net_cr, ( IFNULL(period_net_dr,0) - IFNULL(period_net_cr,0) "
    . " + IFNULL(begin_balance_dr,0) - IFNULL(begin_balance_cr,0) ) AS balance "
    . " FROM gl_balance_v ";
   $sql .= " WHERE field4 >= '{$account_l}' AND  field4 <= '{$account_u}' ";
@@ -157,7 +157,7 @@ ORDER BY gp.gl_period_id DESC
 
  public static function find_balance_sum_between_accounts($account_l, $account_u, $gl_period_id = '') {
 
-  $sql = " SELECT field1, field4, ledger_id, period_id, ( IFNULL(SUM(period_net_dr),0) - IFNULL(SUM(period_net_cr),0) "
+  $sql = " SELECT field1, field4, ledger_id, period_id, IFNULL(begin_balance_dr,0) as begin_balance_dr, IFNULL(begin_balance_cr,0) as begin_balance_cr, IFNULL(period_net_dr,0) as period_net_dr, IFNULL(period_net_cr,0) as period_net_cr, ( IFNULL(SUM(period_net_dr),0) - IFNULL(SUM(period_net_cr),0) "
    . " + IFNULL(SUM(begin_balance_dr),0) - IFNULL(SUM(begin_balance_cr),0) ) AS balance "
    . " FROM gl_balance_v ";
   $sql .= " WHERE field4 >= '{$account_l}' AND  field4 <= '{$account_u}' ";
@@ -278,9 +278,13 @@ ORDER BY gp.gl_period_id DESC
   $count = $val_sum = 0;
   $ret_ar = [];
   $row_stmt = '';
+  $acc_debit = 0;
+  $acc_credit = 0;
   $all_parent_segments_ai = $this->parent_segments_arrayIterator;
   $arraySize = sizeof($this->parent_segments_arrayIterator);
   while ($all_parent_segments_ai->valid()) {
+   $debit_end = 0;
+   $credit_end = 0;
    $curr_bal = 0;
    $curr_parent_line = $all_parent_segments_ai->current();
    $key_current = $all_parent_segments_ai->key();
@@ -315,9 +319,11 @@ ORDER BY gp.gl_period_id DESC
       $row_stmt .= '</tr>';
       $val_sum += $bal_r->balance;
       $curr_bal += $bal_r->balance;
+      echo "111111";
      }
     } else {
      $curr_bal = null;
+     echo "222222";
     }
     $row_stmt .=' <tr class="asset_parent_line' . $count . '">';
     $row_stmt .= ' <td>' . $curr_parent_line->description . '</td>';
@@ -330,15 +336,58 @@ ORDER BY gp.gl_period_id DESC
     if ($gl_balances) {
      $val_sum += $gl_balances->balance;
      $curr_bal = $gl_balances->balance;
+     //     ==============================rows value
+    $row_stmt .=' <tr class="asset_parent_line' . $count . '">';
+    $row_stmt .= ' <td>' . $curr_parent_line->code . '</td>';
+    $row_stmt .= ' <td>' . $curr_parent_line->description . '</td>';
+    
+     if($gl_balances->field4 >=0 && $gl_balances->field4 <= "299999")
+     {
+        $debit_end = $gl_balances->begin_balance_dr + $gl_balances->period_net_dr - $gl_balances->period_net_cr;
+        $row_stmt .= ' <td>' . $gl_balances->begin_balance_dr . '</td>';
+        $row_stmt .= ' <td></td>';
+        
+     }
+     else if($gl_balances->field4 >=3 && $gl_balances->field4 <= "499999")
+     {
+         $credit_end = $gl_balances->begin_balance_cr + $gl_balances->period_net_cr - $gl_balances->period_net_dr;
+         $row_stmt .= ' <td></td>';
+         $row_stmt .= ' <td>' . $gl_balances->begin_balance_cr . '</td>';
+     }
+     $acc_debit = $acc_debit + $gl_balances->period_net_dr;
+     $acc_credit = $acc_credit + $gl_balances->period_net_cr;
+     /*
+      * Nợ ck
+            Bằng
+            Nơ đầu kỳ + psinh nợ - psinh có
+            Đây là đối với tk Tài sản
+            ( tăng ghi nợ giảm ghi có)
+        Đối với tk Nợ phải trả và vốn chủ sở hữu
+            ( tăng ghi có giảm ghi nợ)
+            Thì số dư bên có
+            Tính như sau
+            Số dư có đầu kỳ + psinh có - psinh nợ
+      */
+    $row_stmt .= ' <td>' . $gl_balances->period_net_dr . '</td>';
+    $row_stmt .= ' <td>' . $gl_balances->period_net_cr . '</td>';
+//    $row_stmt .= ' <td>' . $curr_bal . '</td>';
+    $row_stmt .= ' <td>' . $acc_debit . '</td>';
+    $row_stmt .= ' <td>' . $acc_credit . '</td>';
+    if($gl_balances->field4 >=0 && $gl_balances->field4 <= "299999")
+     {
+        $row_stmt .= ' <td>' . $debit_end . '</td>';
+        $row_stmt .= ' <td></td>';
+     }
+     else if($gl_balances->field4 >=3 && $gl_balances->field4 <= "499999")
+     {
+         $row_stmt .= ' <td></td>';
+         $row_stmt .= ' <td>' . $credit_end . '</td>';
+     }
+    //  $row_stmt .= '<td>'.$curr_parent_line->code. ' & account_low '. $account_l. ' & account_high'. $account_code_upper_limit . '</td>';
+    $row_stmt .= '</tr>';
     } else {
      $curr_bal = null;
     }
-    $row_stmt .=' <tr class="asset_parent_line' . $count . '">';
-    $row_stmt .= ' <td>' . $curr_parent_line->description . '</td>';
-    $row_stmt .= ' <td>' . $curr_bal . '</td>';
-    $row_stmt .= '<td></td>';
-//  $row_stmt .= '<td>'.$curr_parent_line->code. ' & account_low '. $account_l. ' & account_high'. $account_code_upper_limit . '</td>';
-    $row_stmt .= '</tr>';
    }
 
 
