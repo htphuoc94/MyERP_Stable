@@ -923,8 +923,8 @@ Processing object type DATABASE_EXPORT/SCHEMA/TABLE/TABLE_DATA
 .  estimated "INO"."INV_COUNT_ENTRIES"                       0 KB
 .  estimated "INO"."INV_COUNT_HEADER"                        0 KB
 .  estimated "INO"."INV_COUNT_SCHEDULE"                      0 KB
-.  estimated "INO"."INV_INTORG_TRANSFER_HEADER"              0 KB
-.  estimated "INO"."INV_INTORG_TRANSFER_LINE"                0 KB
+.  estimated "INO"."INV_interorg_TRANSFER_HEADER"              0 KB
+.  estimated "INO"."INV_interorg_TRANSFER_LINE"                0 KB
 .  estimated "INO"."INV_ITEM_RELATION"                       0 KB
 .  estimated "INO"."INV_ITEM_REVISION"                       0 KB
 .  estimated "INO"."INV_LOCATION_DEFAULT"                    0 KB
@@ -2595,8 +2595,8 @@ Processing object type DATABASE_EXPORT/POST_SYSTEM_IMPCALLOUT/MARKER
 . . exported "INO"."INV_COUNT_ENTRIES"                       0 KB       0 rows
 . . exported "INO"."INV_COUNT_HEADER"                        0 KB       0 rows
 . . exported "INO"."INV_COUNT_SCHEDULE"                      0 KB       0 rows
-. . exported "INO"."INV_INTORG_TRANSFER_HEADER"              0 KB       0 rows
-. . exported "INO"."INV_INTORG_TRANSFER_LINE"                0 KB       0 rows
+. . exported "INO"."INV_interorg_TRANSFER_HEADER"              0 KB       0 rows
+. . exported "INO"."INV_interorg_TRANSFER_LINE"                0 KB       0 rows
 . . exported "INO"."INV_ITEM_RELATION"                       0 KB       0 rows
 . . exported "INO"."INV_ITEM_REVISION"                       0 KB       0 rows
 . . exported "INO"."INV_LOCATION_DEFAULT"                    0 KB       0 rows

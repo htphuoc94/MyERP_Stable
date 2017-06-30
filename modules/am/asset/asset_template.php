@@ -140,17 +140,18 @@
           </td>
           <td><?php $f->seq_field_d($count) ?></td>
           <td><?php $f->text_field_wid2sr('am_activity_reference_id'); ?></td>
-          <td><?php
-           echo $f->hidden_field_withCLass('activity_item_id_m', $$class_second->activity_item_id_m, 'item_id_m');
-           $f->text_field_wid2('activity_item_number', 'select_item_number_am_asset_activity');
-           echo $f->hidden_field_withCLass('am_asset_type', 'ASSET_ACTIVITY', 'popup_value');
-           ?><i class="select_item_number select_popup clickable fa fa-search"></i>
-          </td>
+             <td><?php
+                 echo $f->hidden_field_withCLass('activity_item_id_m', $$class_second->activity_item_id_m, 'item_id_m');
+                 $f->text_field_wid2('item_number', 'select_item_number_am_asset_activity');
+                 echo $f->hidden_field_withCLass('am_asset_type', 'ASSET_ACTIVITY', 'popup_value');
+                 ?><i class="select_item_number select_popup clickable fa fa-search"></i>
+             </td>
+
           <td><?php echo $f->date_fieldAnyDay('start_date', $$class_second->start_date); ?></td>
           <td><?php echo $f->date_fieldAnyDay('end_date', $$class_second->end_date); ?></td>
-          <td><?php echo $f->select_field_from_object('activity_cause', am_asset_activity::activity_cause(), 'option_line_code', 'option_line_value', $$class_second->activity_cause); ?></td>
-          <td><?php echo $f->select_field_from_object('activity_type', am_asset_activity::activity_type(), 'option_line_code', 'option_line_value', $$class_second->activity_type); ?></td>
-          <td><?php echo $f->select_field_from_object('activity_source', am_asset_activity::activity_source(), 'option_line_code', 'option_line_value', $$class_second->activity_source); ?></td>
+          <td><?php echo $f->select_field_from_object('am_activity_cause', am_asset_activity::activity_cause(), 'option_line_code', 'option_line_value', $$class_second->am_activity_cause); ?></td>
+          <td><?php echo $f->select_field_from_object('am_activity_type', am_asset_activity::activity_type(), 'option_line_code', 'option_line_value', $$class_second->am_activity_type); ?></td>
+          <td><?php echo $f->select_field_from_object('am_activity_source', am_asset_activity::activity_source(), 'option_line_code', 'option_line_value', $$class_second->am_amactivity_source); ?></td>
           <td><?php $f->text_field_wid2('description'); ?></td>
          </tr>
          <?php
