@@ -1118,21 +1118,21 @@ GROUP BY  gjl.code_combination_id;
 
 CREATE OR REPLACE VIEW inv_interorg_transfer_v
 (
-inv_intorg_transfer_header_id, order_number, io_order_number, line_number, io_line_number, item_number, status, inv_intorg_transfer_line_id, 
+inv__transfer_header_id, order_number, io_order_number, line_number, io_line_number, item_number, status, inv__transfer_line_id,
 from_org_id, transaction_type_id, to_org_id, carrier, vehicle_number, waybill, uom_id,
 from_subinventory_id, from_locator_id, item_id_m, item_description, to_subinventory_id, to_locator_id,  
 transaction_quantity, serial_number, lot_number
 )
 AS
 SELECT
-ith.inv_intorg_transfer_header_id, ith.order_number, ith.order_number,itl.line_number, itl.line_number,item.item_number, itl.status, itl.inv_intorg_transfer_line_id, 
+ith.inv__transfer_header_id, ith.order_number, ith.order_number,itl.line_number, itl.line_number,item.item_number, itl.status, itl.inv__transfer_line_id,
 ith.from_org_id, ith.transaction_type_id, ith.to_org_id, ith.carrier, ith.vehicle_number, ith.waybill, itl.uom_id,
 itl.from_subinventory_id, itl.from_locator_id, itl.item_id_m, itl.item_description, itl.to_subinventory_id, itl.to_locator_id,  
 itl.transaction_quantity, itl.serial_number, itl.lot_number
-FROM inv_intorg_transfer_header ith,
-inv_intorg_transfer_line itl,
+FROM inv__transfer_header ith,
+inv__transfer_line itl,
 item
-WHERE ith.inv_intorg_transfer_header_id = itl.inv_intorg_transfer_header_id
+WHERE ith.inv__transfer_header_id = itl.inv__transfer_header_id
 AND item.item_id_m = itl.item_id_m
 AND item.org_id = ith.from_org_id
 
