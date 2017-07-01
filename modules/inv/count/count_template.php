@@ -93,7 +93,7 @@
          <th><?php echo gettext('Item Number') ?></th>
          <th><?php echo gettext('Item Description') ?></th>
          <th><?php echo gettext('Schedule Date') ?></th>
-         <th><?php echo gettext('StatusStatus') ?></th>
+         <th><?php echo gettext('Status') ?></th>
          <th><?php echo gettext('Code On Count') ?></th>
          <th><?php echo gettext('Subinventory') ?></th>
          <th><?php echo gettext('Locator') ?></th>
@@ -118,7 +118,7 @@
           <td><?php $f->text_field_wid2('item_number', 'select_item_number'); ?><i class="select_item_number select_popup clickable fa fa-search"></i></td>
           <td><?php $f->text_field_wid2('item_description'); ?></td>
           <td><?php echo $f->date_fieldAnyDay('schedule_date', $$class_second->schedule_date); ?></td>
-          <td><?php echo $f->select_field_from_array('status', inv_count_schedule::$status_a, $$class_second->status, '', '', '', '', 1); ?></td>
+          <td><?php echo $f->select_field_from_array('status', inv_count_schedule::$status_a, $$class_second->status); ?></td>
           <td><?php $f->text_field_wid2s('abc_code'); ?></td>
           <td><?php echo $f->select_field_from_object('subinventory_id', subinventory::find_all_of_org_id($$class->org_id), 'subinventory_id', 'subinventory', $$class_second->subinventory_id, '', 'subinventory_id medium', '', $readonly); ?></td>
           <td><?php echo $f->select_field_from_object('locator_id', locator::find_all_of_subinventory($$class_second->subinventory_id), 'locator_id', 'locator', $$class_second->locator_id, '', 'locator_id medium', '', $readonly); ?></td>
