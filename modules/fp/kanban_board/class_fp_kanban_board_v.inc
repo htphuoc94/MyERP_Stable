@@ -1,6 +1,6 @@
 <?php
 
-class fp_minmax_board_v extends dbObject {
+class fp_kanban_board_v extends dbObject {
 
  public static $table_name = "fp_minmax_board_v";
  public static $primary_column = "onhand_id";

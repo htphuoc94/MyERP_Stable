@@ -9,7 +9,7 @@
 
 class inoform {
 
-// protected static $table_name = "inoform";
+ protected static $table_name = "inoform";
  public static $primary_column = "inoform_id";
  public static $key_column = 'form_name';
  public static $module = "sys";

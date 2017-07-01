@@ -14,9 +14,9 @@
          <a name="show" href="form.php?class_name=bc_label_request&<?php echo "mode=$mode"; ?>" class="show document_id bc_label_request_id">
           <i class="fa fa-refresh"></i></a> 
         </li>
-        <li><?php $f->l_select_field_from_object('sys_printer_id', sys_printer::find_all(), 'sys_printer_id', 'printer_name', $$class->sys_printer_id, 'sys_printer_id', '', '', 1); ?> 					</li>
-        <li><?php $f->l_select_field_from_object('transaction_type_id', transaction_type::find_all(), 'transaction_type_id', 'transaction_type', $$class->transaction_type_id, 'transaction_type_id', '', '', 1); ?>        </li>
-        <li><?php $f->l_select_field_from_object('bc_label_format_header_id', bc_label_format_header::find_all(), 'bc_label_format_header_id', 'format_name', $$class->bc_label_format_header_id, 'bc_label_format_header_id', '', '', 1); ?>              </li>
+        <li><?php $f->l_select_field_from_object('sys_printer_id', sys_printer::find_all(), 'sys_printer_id', 'printer_name', $$class->sys_printer_id, 'sys_printer_id'); ?> 					</li>
+        <li><?php $f->l_select_field_from_object('transaction_type_id', transaction_type::find_all(), 'transaction_type_id', 'transaction_type', $$class->transaction_type_id, 'transaction_type_id'); ?>        </li>
+        <li><?php $f->l_select_field_from_object('bc_label_format_header_id', bc_label_format_header::find_all(), 'bc_label_format_header_id', 'format_name', $$class->bc_label_format_header_id, 'bc_label_format_header_id'); ?>              </li>
         <li><?php $f->l_text_field_d('status'); ?> 					</li>
         <li><label><?php echo gettext('No Of Copies') ?></label><?php echo $f->text_field_ap(array('name' => 'no_of_copies', 'value' => '', 'id' => 'no_of_copies')); ?> 					</li>
         <li><label><?php echo gettext('Label') ?></label><button class="button btn btn-warning" id="print_label"><?php echo gettext('Reprint') ?></button></li>
