@@ -74,7 +74,7 @@ class inv_abc_assignment_line extends dbObject {
  
   public static function find_by_parentId_classCode_forCycleCount($parent_id, $class_code, $org_id) {
   $sql = " SELECT 
-     ail.inv_abc_assignment_line_id, ailinv_abc_assignment_header_id , ail.item_id_m ,
+     ail.inv_abc_assignment_line_id, ail.inv_abc_assignment_header_id , ail.item_id_m ,
      ail.abc_class, ail.description
 
      FROM

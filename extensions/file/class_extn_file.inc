@@ -268,14 +268,25 @@ class extn_file extends dbObject {
     rename($file_tmp, $new_dir);
    }
 //save to data base if in db mode
-   if (($upload_status) && ($this->_upload_type == 'data_base')) {
-    $fh = fopen("$this->_file_dir/$this->file_name", 'r');
-    $data_array = [];
-    while (($data = fgetcsv($fh, 3000, ",")) !== FALSE) {
-     array_push($data_array, $data);
-    }
-    $this->mass_upload($data_array, $this->_class_name);
-    fclose($fh);
+  if (($upload_status) && ($this->_upload_type == 'data_base')) {
+//  $fh = fopen("$this->_file_dir/$this->file_name", 'r');
+//  $data_array = [];
+//   while (($data = fgetcsv($fh, 3000, ",")) !== FALSE) {
+//     array_push($data_array, $data);
+//    }
+//      $this->mass_upload($data_array, $this->_class_name);
+//   fclose($fh);
+//   pa($data_array);
+       require_once(INC_TPARTY . DS . "PHPExcel" . DS . "PHPExcel.php");
+       require_once(INC_TPARTY . DS . "PHPExcel" . DS . "PHPExcel".DS."IOFactory.php");
+       $objPHPExcel = PHPExcel_IOFactory::load("$this->_file_dir/$this->file_name");
+       $excel=$objPHPExcel->getActiveSheet();
+      $data_array=$excel->toArray(null,true,true,false);
+        //
+      //pa($data_array) ;
+       $this->mass_upload($data_array, $this->_class_name);
+
+
    }
 
    if (($upload_status) && ($this->_upload_type == 'only_server')) {

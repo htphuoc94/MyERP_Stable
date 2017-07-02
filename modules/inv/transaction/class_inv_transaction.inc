@@ -1085,6 +1085,11 @@ class inv_transaction extends dbObject {
  private function _save_journal_header() {
   global $dbc;
   $gled = new gl_ledger();
+  if (!empty($this->org_id)) {
+   $inv = new inventory();
+   $inv_i = $inv->findRelatedDetail_ByOrgId($this->org_id);
+   $this->ledger_id = $this->_ledger_id = $inv_i->ledger_id;
+  }
   $gled->findBy_id($this->_ledger_id);
   $gp = new gl_period();
   $current_open_period = $gp->current_open_period($this->_ledger_id);

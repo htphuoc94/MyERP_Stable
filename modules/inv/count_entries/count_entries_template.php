@@ -65,10 +65,11 @@
        $inv_count_schedule_object_ai->seek($position);
        while ($inv_count_schedule_object_ai->valid()) {
         $inv_count_schedule = $inv_count_schedule_object_ai->current();
-        ?>         
+        ?>
+
         <tr class="inv_count_entries<?php echo $count ?>">
          <td>
-          <?php
+          <?php                 
           echo ino_inline_action($$class_second->inv_count_schedule_id, array('inv_count_header_id' => $inv_count_header_id_h, 'org_id' => $$class->org_id));
           ?>
          </td>

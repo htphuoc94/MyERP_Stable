@@ -1,0 +1,7 @@
+ar_customer_id,customer_number,customer_name,customer_relationship,alt_name,supplier_id,customer_type,customer_category,tax_country,tax_reg_no,tax_payer_id,ship_to_id,bill_to_id,customer_contact_id,customer_credit_class,profile_name,status,rev_enabled_cb,rev_number,created_by,creation_date,last_update_by,last_update_date
+10,31,ABC Corp.1,,,,,,IN,,,,,22,,,,,,0,6/29/2014 00:00:00,34,3/2/2015 08:43:23
+11,2001,inoERP1,,,,EXTERNAL,DISTRIBUTOR,IN,,,88,83,11,,,,,,0,6/4/2014 00:00:00,34,5/11/2015 05:07:29
+12,2321,ABC21,PRIMARY,,12,EXTERNAL,,IN,REG003,REG003,86,89,0,,,,,,0,8/18/2014 00:00:00,34,6/9/2015 17:00:11
+13,12991,ABC Corp111,,,11,EXTERNAL_FORGEIN,,IN,REG001121,3433,88,,22,1,,active,,,34,2/18/2015 18:45:26,34,2/18/2015 18:45:26
+14,"13,121",asfasf1,,,,,,,,,,,,,,,,,34,2/20/2015 04:47:24,34,6/23/2015 10:21:20
+15,G0011,Gao Chin Tam1,SECONDARY,,,EXTERNAL,END_CUST,JP,,,,,,,,,,,1,2/27/2017 16:45:15,1,2/27/2017 16:45:15

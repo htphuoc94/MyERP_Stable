@@ -128,6 +128,7 @@ require_once(INC_EXTENSIONS . DS . "file" . DS . "class_extn_file.inc");
 
  require_once(INC_MODULE . DS . "pos" . DS . "tt_with_search" . DS . "class_pos_tt_with_search_header.inc");
  require_once(INC_TPARTY . DS . "barcode" . DS . "class_ino_barcode.inc");
+    require_once(INC_TPARTY . DS . "PHPExcel" . DS . "PHPExcel.php");
  require_once(INC_TPARTY . DS . "extensions" . DS . "social_login" . DS . "class_social_login.inc");
 //include extensions
 //require_once(INC_EXTENSIONS . DS . "contact" . DS . "class_extn_contact.inc");
