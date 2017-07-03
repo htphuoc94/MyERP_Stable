@@ -1,16 +1,32 @@
-<h1 class="text-center"><?php echo $custom_template_name . ' | ' . gettext('CONSOLIDATED BALANCE SHEETS'); ?></h1>
+<!--<h1 class="text-center"><?php // echo $custom_template_name . ' | ' . gettext('CONSOLIDATED BALANCE SHEETS'); ?></h1>-->
 <h2 class="text-center"><?php echo $org_name ?></h2>
 <table class ="balance_sheet table table-bordered simple_table">
  <thead> 
   <tr>
-   <th><?php echo gettext('Elements'); ?></th>
-   <th>As of <?php echo $current_period; ?></th>
-   <th>As of <?php echo $last_period; ?></th>
+    <th rowspan="2" style="text-align: center;"><?php echo gettext('Account'); ?></th>
+    <th rowspan="2" style="text-align: center;"><?php echo gettext('Account Name'); ?></th>
+    <th colspan="2" style="text-align: center;"><?php echo gettext('Beginning'); ?></th>
+    <th colspan="4" style="text-align: center;"><?php echo gettext('Incurred'); ?></th>
+    <th colspan="2" style="text-align: center;"><?php echo gettext('End Of Period'); ?></th>
+<!--   <th>As of <?php // echo $current_period; ?></th>
+   <th>As of <?php // echo $last_period; ?></th>-->
+  </tr>
+  <tr>
+    <th><?php echo gettext('Debit'); ?></th>
+    <th><?php echo gettext('Credit'); ?></th>
+    <th><?php echo gettext('Debit'); ?></th>
+    <th><?php echo gettext('Credit'); ?></th>
+    <th><?php echo gettext('Accumulated Debit'); ?></th>
+    <th><?php echo gettext('Accumulated Credit'); ?></th>
+    <th><?php echo gettext('Debit'); ?></th>
+    <th><?php echo gettext('Credit'); ?></th>
+<!--   <th>As of <?php // echo $current_period; ?></th>
+   <th>As of <?php // echo $last_period; ?></th>-->
   </tr>
  </thead>
  <tbody>
   <tr class="label_one">
-   <td><?php echo gettext('ASSETS'); ?></td><td></td><td></td>
+   <td><?php echo gettext('ASSETS'); ?></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
   </tr>
   <?php
   $coa = new coa();
@@ -35,9 +51,8 @@
   $total_asset += $sum_amount_cash_eq;
   ?>
   <tr class="label_three">
-   <td><?php echo gettext('Total Cash & Receivables'); ?></td>
-   <td><?php echo $sum_amount_cash_eq ?></td>
-   <td></td>
+    <td colspan="2" style="text-align: right;"><?php echo gettext('Total Cash & Receivables'); ?></td>
+   <td colspan="8"><?php echo $sum_amount_cash_eq ?></td>
   </tr>
 
   <?php
@@ -54,9 +69,8 @@
   $total_asset += $sum_amount_gi;
   ?>
   <tr class="label_three">
-   <td>Gross Inventory</td>
-   <td><?php echo ($sum_amount_gi) ?></td>
-   <td></td>
+   <td colspan="2" style="text-align: right;">Gross Inventory</td>
+   <td colspan="8"><?php echo ($sum_amount_gi) ?></td>
   </tr>
 
   <?php
@@ -73,9 +87,8 @@
   $total_asset += $sum_amount_reserve;
   ?>
   <tr class="label_three">
-   <td><?php echo gettext('Net Inventory'); ?></td>
-   <td><?php echo ($sum_amount_gi + $sum_amount_reserve ) ?></td>
-   <td></td>
+   <td colspan="2" style="text-align: right;"><?php echo gettext('Net Inventory'); ?></td>
+   <td colspan="8"><?php echo ($sum_amount_gi + $sum_amount_reserve ) ?></td>
   </tr>
   <?php
   $gbv->account_code_low_limit = $coa->field4_low = '106000';
@@ -92,11 +105,9 @@
   echo $ret_a['statement'];
   ?>
   <tr class="label_two with_data">
-   <td><?php echo gettext('Total Current Assets'); ?></td>
-   <td><?php echo $total_asset; ?></td>
-   <td></td>
+   <td colspan="2" style="text-align: right;"><?php echo gettext('Total Current Assets'); ?></td>
+   <td colspan="8"><?php echo $total_asset; ?></td>
   </tr>
-
 
 
   <?php
@@ -113,19 +124,17 @@
   echo $ret_a['statement'];
   ?>
   <tr class="label_two with_data">
-   <td><?php echo gettext('Total Non Current Assets'); ?></td>
-   <td><?php echo $sum_nonc_asset; ?></td>
-   <td></td>
+   <td colspan="2" style="text-align: right;"><?php echo gettext('Total Non Current Assets'); ?></td>
+   <td colspan="8"><?php echo $sum_nonc_asset; ?></td>
   </tr>
 
   <tr class="label_one with_data">
-   <td><?php echo gettext('TOTAL ASSETS'); ?></td>
-   <td><?php echo ($total_asset); ?></td>
-   <td></td>
+   <td colspan="2" style="text-align: right;"><?php echo gettext('TOTAL ASSETS'); ?></td>
+   <td colspan="8"><?php echo ($total_asset); ?></td>
   </tr>
 
   <tr class="label_one">
-   <td><?php echo gettext('LIABILITIES & EQUITY'); ?></td><td></td><td></td>
+      <td colspan="2" style="text-align: right;"><?php echo gettext('LIABILITIES & EQUITY'); ?></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
   </tr>
 
   <?php
@@ -146,7 +155,8 @@
   $liability_sum += $ret_a['sum'];
   ?>
   <tr class="label_two with_data">
-   <td><?php echo gettext('Total Current Liabilities'); ?></td><td><?php echo $ret_a['sum']; ?></td><td></td>
+   <td colspan="2" style="text-align: right;"><?php echo gettext('Total Current Liabilities'); ?></td>
+   <td colspan="8"><?php echo $ret_a['sum']; ?></td>
   </tr>
 
   <?php
@@ -162,12 +172,12 @@
   $liability_sum += $ret_a['sum'];
   ?>
   <tr class="label_two with_data">
-   <td><?php echo gettext('Total Long-Term Liabilities'); ?></td>
-   <td><?php echo $ret_a['sum']; ?></td><td></td>
+   <td colspan="2" style="text-align: right;"><?php echo gettext('Total Long-Term Liabilities'); ?></td>
+   <td colspan="8"><?php echo $ret_a['sum']; ?></td>
   </tr>
   <tr class="label_two with_data">
-   <td><?php echo gettext('Total Liabilities'); ?></td>
-   <td><?php echo $liability_sum; ?></td><td></td>
+   <td colspan="2" style="text-align: right;"><?php echo gettext('Total Liabilities'); ?></td>
+   <td colspan="8"><?php echo $liability_sum; ?></td>
   </tr>
 
   <?php
@@ -203,20 +213,20 @@
   $ret_expected = (- $total_asset ) - $liability_sum - $equity_sum;
   if (!empty(($ret_expected))) {
    echo '<tr class="label_two with_data">';
-   echo '<td>Retained Earnings - Expected</td>';
-   echo "<td>$ret_expected</td>";
+   echo '<td colspan="2" style="text-align: right;">Retained Earnings - Expected</td>';
+   echo "<td colspan='8'>$ret_expected</td>";
    echo '</tr>';
   }
   ?>
 
   <tr class="label_two with_data">
-   <td><?php echo gettext('Total Shareholders Equity'); ?></td>
-   <td><?php echo ($ret_a['sum'] + $ret_expected); ?></td><td></td>
+   <td colspan="2" style="text-align: right;"><?php echo gettext('Total Shareholders Equity'); ?></td>
+   <td colspan="8"><?php echo ($ret_a['sum'] + $ret_expected); ?></td>
   </tr>
 
   <tr class="label_one with_data">
-   <td><?php echo gettext('TOTAL LIABILITIES & EQUITY'); ?></td>
-   <td><?php echo ($liability_sum + $equity_sum + $ret_expected ); ?></td><td></td>
+   <td colspan="2" style="text-align: right;"><?php echo gettext('TOTAL LIABILITIES & EQUITY'); ?></td>
+   <td colspan="8"><?php echo ($liability_sum + $equity_sum + $ret_expected ); ?></td>
   </tr>
  </tbody>
 </table>

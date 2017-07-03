@@ -280,8 +280,9 @@ class po_line extends dbObject {
 
  public function _before_delete() {
   $detail_line_exists = po_detail::find_by_parent_id($this->po_line_id);
-  if ($detail_line_exists) {
-   echo "<br>Delete is not allowed as PO Detail Lines exists!. First delete detail lines and then try again ";
+  if (empty($detail_line_exists)) {
+      echo "abc";
+//   echo "<br>Delete is not allowed as PO Detail Lines exists!. First delete detail lines and then try again ";
    return -99;
   } else {
    return 1;

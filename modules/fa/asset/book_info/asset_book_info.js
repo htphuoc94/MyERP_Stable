@@ -72,4 +72,13 @@ $(document).ready(function () {
           }
          });
 
+$(".new_current_cost").change(function () {
+    var t = $(".new_current_cost").val();
+//    $(".current_cost").val(t) ;
+    if($(".original_cost").val()==""){
+        $(".original_cost").val(t) ;
+        $(".current_cost").val(t) ;
+    }
+ });
+
 });
