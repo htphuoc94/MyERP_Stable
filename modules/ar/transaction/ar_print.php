@@ -153,6 +153,7 @@ if (!empty($$class->$external_entity_lineId)) {
  		<tbody>
  		 <tr class="line_rows">
  		<tbody class="form_data_line_tbody">
+            <tr>
  		<td><?php echo $$class_second->line_number; ?></td>
  		<td><?php
 			$line_type = option_line::find_by_id($$class_second->line_type);
