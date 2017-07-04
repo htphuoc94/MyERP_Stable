@@ -695,6 +695,10 @@ class ar_transaction_header extends dbObject {
   $this->ar_customer_site_id = $om_so_i->ar_customer_site_id;
   $this->doc_currency = $om_so_i->currency;
   $this->payment_term_id = $om_so_i->payment_term_id;
+  $this->ship_to_id =$om_so_i->ship_to_id;
+     $this->ship_to_address_name =$om_so_i->ship_to_address_name;
+  $this->bill_to_id=$om_so_i->bill_to_id;
+     $this->bill_to_address_name=$om_so_i->bill_to_address_name;
  }
 
  public function multi_select_input_fields() {
