@@ -18,6 +18,7 @@ if(!empty($sd_so_line_obj))
 {
     array_pop($sd_delivery_line_object);
     foreach ($sd_so_line_obj as $sd_so_line) {
+            $$class->shipping_org_id=$sd_so_line->shipping_org_id;
             $sd_delivery_line_obj= new sd_delivery_line();
             $item = item::find_by_id($sd_so_line->item_id_m);
             $sd_so_header=sd_so_header::find_by_id($sd_so_line->sd_so_header_id);
@@ -63,7 +64,7 @@ foreach ($sd_delivery_line_object as &$sd_delivery_lines) {
       <li><?php $f->l_text_field_dr_withSearch('sd_delivery_header_id'); ?>
        <a name="show" href="form.php?class_name=sd_delivery_header&<?php echo "mode=$mode"; ?>" class="show document_id sd_delivery_header_id"><i class="fa fa-refresh"></i></a> 
       </li>
-      <li><?php $f->l_select_field_from_object('shipping_org_id', org::find_all_inventory(), 'org_id', 'org', $sd_delivery_line_obj->shipping_org_id, '', '', 1, $readonly); ?>       </li>
+      <li><?php $f->l_select_field_from_object('shipping_org_id', org::find_all_inventory(), 'org_id', 'org', $$class->shipping_org_id, '', '', 1, $readonly1); ?>       </li>
       <li><?php $f->l_text_field_d('delivery_number'); ?></li>
       <li><?php $f->l_select_field_from_array('status', sd_delivery_header::$status_a, $$class->status, '', '', 1, 1, 1) ?>       </li>
       <li><?php $f->l_date_fieldFromToday('delivery_date', ino_date($$class->delivery_date)); ?></li>
@@ -201,9 +202,9 @@ foreach ($sd_delivery_line_object as &$sd_delivery_lines) {
        foreach ($sd_delivery_line_object as $sd_delivery_line) {
         ?>         
         <tr class="sd_delivery_line<?php echo $count ?>">
-         <td><?php $f->text_field_wid2sr('item_id_m' ,'always_readonly'); ?></td>
-         <td><?php $f->text_field_d2s('item_number' ,'always_readonly'); ?></td>
-         <td><?php $f->text_field_d2('item_description' ,'always_readonly'); ?></td>
+         <td><?php $f->text_field_wid2sr('item_id_m' ,'readonly'); ?></td>
+         <td><?php $f->text_field_d2s('item_number' ,'readonly'); ?></td>
+         <td><?php $f->text_field_d2('item_description' ,'readonly'); ?></td>
          <td><?php echo $f->select_field_from_object('line_uom_id', uom::find_all(), 'uom_id', 'uom_name', $sd_delivery_line->line_uom_id, '', '', '', $readonly1); ?></td>
          <td><?php echo $f->select_field_from_object('staging_subinventory_id', subinventory::find_all_of_org_id($$class->shipping_org_id), 'subinventory_id', 'subinventory', $$class_second->staging_subinventory_id, '', 'subinventory_id', '', $readonly1); ?></td>
          <td><?php echo $f->select_field_from_object('staging_locator_id', locator::find_all_of_subinventory($$class_second->staging_subinventory_id), 'locator_id', 'locator', $$class_second->staging_locator_id, '', 'locator_id', '', $readonly1); ?></td>
