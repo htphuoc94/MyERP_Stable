@@ -6,6 +6,47 @@ inoERP
  * @link        http://inoideas.org
  * @source code https://github.com/inoerp/inoERP
 -->
+<?php 
+
+if (!empty($_GET['sd_so_header_id']) && (!is_array($_GET['sd_so_header_id']))) {
+    $sd_so_line_obj= new sd_so_line();
+    $$class->sd_so_header_id = $_GET['sd_so_header_id'];
+    $sd_so_line_obj=$sd_so_line_obj::find_by_sd_so_headerId($_GET['sd_so_header_id']);
+//    pa($sd_so_line_obj);    
+}
+if(!empty($sd_so_line_obj))
+{
+    array_pop($sd_delivery_line_object);
+    foreach ($sd_so_line_obj as $sd_so_line) {
+            $sd_delivery_line_obj= new sd_delivery_line();
+            $item = item::find_by_id($sd_so_line->item_id_m);
+            $sd_so_header=sd_so_header::find_by_id($sd_so_line->sd_so_header_id);
+            $sd_delivery_line_obj->item_id_m = $item->item_id_m;
+            $sd_delivery_line_obj->line_uom_id = $sd_so_line->uom_id;
+            $sd_delivery_line_obj->item_number = $item->item_number;
+            $sd_delivery_line_obj->item_description= $item->item_description;
+            $sd_delivery_line_obj->uom_id=$sd_so_line->uom_id;
+            $sd_delivery_line_obj->sd_so_header_id=$sd_so_line->sd_so_header_id;
+            $sd_delivery_line_obj->sd_so_line_id=$sd_so_line->sd_so_line_id;
+            $sd_delivery_line_obj->shipping_org_id=$sd_so_line->shipping_org_id;
+            $sd_delivery_line_obj->shipped_quantity=$sd_so_line->shipped_quantity;
+            $sd_delivery_line_obj->so_number=$sd_so_header->so_number;
+            $sd_delivery_line_obj->so_line_number=$sd_so_line->line_number;
+        array_push($sd_delivery_line_object,$sd_delivery_line_obj);
+    }
+}
+else
+foreach ($sd_delivery_line_object as &$sd_delivery_lines) {
+    if (!empty($sd_delivery_lines->item_id_m)) {
+        $item = item::find_by_id($sd_delivery_lines->item_id_m);
+        $sd_delivery_lines->item_number = $item->item_number;
+    } else {
+
+        $sd_delivery_lines->item_number = $item->null;
+    }
+}
+?>
+
 <div id ="form_header">
  <span class="heading"><?php echo gettext('Delivery Header') ?></span>
  <div id="tabsHeader">
@@ -22,7 +63,7 @@ inoERP
       <li><?php $f->l_text_field_dr_withSearch('sd_delivery_header_id'); ?>
        <a name="show" href="form.php?class_name=sd_delivery_header&<?php echo "mode=$mode"; ?>" class="show document_id sd_delivery_header_id"><i class="fa fa-refresh"></i></a> 
       </li>
-      <li><?php $f->l_select_field_from_object('shipping_org_id', org::find_all_inventory(), 'org_id', 'org', $$class->shipping_org_id, '', '', 1, $readonly1); ?>       </li>
+      <li><?php $f->l_select_field_from_object('shipping_org_id', org::find_all_inventory(), 'org_id', 'org', $sd_delivery_line_obj->shipping_org_id, '', '', 1, $readonly); ?>       </li>
       <li><?php $f->l_text_field_d('delivery_number'); ?></li>
       <li><?php $f->l_select_field_from_array('status', sd_delivery_header::$status_a, $$class->status, '', '', 1, 1, 1) ?>       </li>
       <li><?php $f->l_date_fieldFromToday('delivery_date', ino_date($$class->delivery_date)); ?></li>
@@ -113,7 +154,7 @@ inoERP
       <tbody class="form_data_line_tbody">
        <?php
        $count = 0;  
-       //pa($sd_delivery_line_object);
+//       pa($sd_delivery_line_object);
        foreach ($sd_delivery_line_object as $sd_delivery_line) {
         $f->readonly2 = !empty($sd_delivery_line->sd_delivery_line_id) ? true : false;
         ?>         
@@ -125,15 +166,15 @@ inoERP
          </td>
          <td><?php form::text_field_wid2sr('sd_delivery_line_id'); ?>
           <i class="select_delivery_line select_popup clickable fa fa-search"></i></td>
-         <td><?php $f->text_field_wid2sr('sd_so_header_id' , 'always_readonly'); ?></td>
-         <td><?php $f->text_field_wid2sr('sd_so_line_id' , 'always_readonly'); ?></td>
-         <td><?php $f->text_field_wid2sr('so_number', 'always_readonly'); ?></td>
-         <td><?php $f->text_field_wid2sr('so_line_number' , 'always_readonly'); ?></td>
+         <td><?php $f->text_field_wid2sr('sd_so_header_id' , 'readonly'); ?></td>
+         <td><?php $f->text_field_wid2sr('sd_so_line_id' , 'readonly'); ?></td>
+         <td><?php $f->text_field_wid2sr('so_number', 'readonly'); ?></td>
+         <td><?php $f->text_field_wid2sr('so_line_number' , 'readonly'); ?></td>
          <td><?php echo $f->number_field('quantity', $sd_delivery_line->quantity); ?></td>
-         <td><?php echo $f->number_field('shipped_quantity', $sd_delivery_line->shipped_quantity, '8', '', 'always_readonly', '', 1); ?></td>
+         <td><?php echo $f->number_field('shipped_quantity', $sd_delivery_line->shipped_quantity, '8', '', 'readonly', '', 1); ?></td>
          <td><?php echo $f->number_field('so_qty_change', '', '', '', 'small', '', 1); ?></td>
-         <td><?php $f->text_field_wid2r('delivery_status' ,'always_readonly'); ?></td>
-         <td><?php $f->text_field_wid2r('action' ,'always_readonly'); ?></td>
+         <td><?php $f->text_field_wid2r('delivery_status' ,'readonly'); ?></td>
+         <td><?php $f->text_field_wid2r('action' ,'readonly'); ?></td>
         </tr>
         <?php
         $count = $count + 1;
