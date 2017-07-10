@@ -5,7 +5,7 @@
 // this.item_number = item_number;
 // this.item_description = item_description;
 // this.uom_id = uom_id;
-// this.inv_abc_valuation_id = inv_abc_valuation_id;
+// this.inv_abc_valuation_id = inv_abc_valuation_id;wrong
 // this.valuation_name = valuation_name;
 // this.scope_org_id = scope_org_id;
 //}

@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/so/so.js</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/so/class_sd_so_line.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/ar/transaction/transaction.inc</file>
@@ -15,6 +16,30 @@
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/so/so_template.php</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/delivery/class_sd_delivery_header.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/delivery/delivery.js</file>
+=======
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/includes/functions/functions.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count_schedule/class_inv_count_schedule.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/abc_valuation/class_inv_abc_valuation_result.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count/count.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/org/inventory/class_inventory.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/abc_valuation/class_inv_abc_valuation.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count_entries/count_entries_template.php</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/includes/basics/json.basics.php</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count_entries/class_inv_count_entries.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/includes/general_class/trait_dbObject_t.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/abc_assignment/abc_assignment.js</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count_entries/class_inv_count_entries_v.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/includes/general_class/class_inoform.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/sys/program_schedule/program_schedule.js</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/sys/program_schedule/class_sys_program_schedule.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/form.php</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/abc_assignment/class_inv_abc_assignment_header.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count_entries/count_entries.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count/class_inv_count_header.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count/count_template.php</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/abc_assignment/abc_assignment.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/sys/program_schedule/program_schedule_template.php</file>
+>>>>>>> 24a53403286be460da91478654d9d3ce2f018638
         </group>
     </open-files>
 </project-private>

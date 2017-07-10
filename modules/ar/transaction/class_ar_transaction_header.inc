@@ -1,7 +1,7 @@
 <?php
 
 /**
- * inoERP 
+ * inoERP
  *
  * Version 0.1.1
  *
@@ -15,15 +15,15 @@
  * AR_TRANSACTION_HEADER
  * Used for generating AR Invoice, Debit Memo, Credit Memo, Deposit, Guarantee
  * Contains all the AR Transaction header level information, such as - Customer, Document Type, Currency, Trnx Number
- * 
+ *
  * Status Update :
  * INCOMPLETE : Not ready for accounting
  * COMPLETE : Ready for accounting
  *            with gl_journal_header_id means accounting is created.
  * CLOSED : Journals are posted
- *          Status is changed by the post program and only adjustments are possible 
- *            
- * 
+ *          Status is changed by the post program and only adjustments are possible
+ *
+ *
  */
 class ar_transaction_header extends dbObject {
 
@@ -52,13 +52,13 @@ class ar_transaction_header extends dbObject {
   'COMPLETE' => 'Complete',
   'CLOSED' => 'Closed'
  ];
- 
+
   public static $receivable_rule_a = [
   'BILL_ADV' => 'Bill In Advance',
   'BILL_ARR' => 'Bill In Arrears',
   'BILL_PRO' => 'Bill In Proportionate'
  ];
-  
+
  public $action_a = [
   'COMPLETE' => 'Complete Transacion',
   'INCOMPLETE' => 'Incomplete Transacion',
@@ -150,7 +150,6 @@ class ar_transaction_header extends dbObject {
   'bu_org_id',
   'transaction_type',
   'ar_customer_id',
-  'ar_customer_site_id',
   'currency',
   'payment_term_id',
   'document_date',
@@ -176,7 +175,7 @@ class ar_transaction_header extends dbObject {
   public $fields_inDataBase_notInForm = [
   'currency'
  ];
- 
+
  public $search = [
   '_show_update_path' => 1,
   '_update_action_meassge' => 'Update',
@@ -191,12 +190,12 @@ class ar_transaction_header extends dbObject {
   'transaction_class' => 'AR_TRANSACTION_CLASS',
 //		 'om_so_status' => 'AR_TRANSACTION_TYPE',
  ];
- 
+
    public $search_functions = [
   'Organization' => 'search_bu_name',
  ];
-	
-	 
+
+
  public $ar_transaction_header_id;
  public $bu_org_id;
  public $transaction_type;
@@ -563,7 +562,7 @@ class ar_transaction_header extends dbObject {
 
  /* 1. Reverse the journal header
   * 2. Update the PO lines
-  * 3. Update the transaction header & line 
+  * 3. Update the transaction header & line
   */
 
  private function _cancel_transaction() {
