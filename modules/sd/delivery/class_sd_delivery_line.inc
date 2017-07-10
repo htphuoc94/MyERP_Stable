@@ -177,7 +177,7 @@ class sd_delivery_line extends dbObject {
 
  private function _validate_delete() {
   if (!empty($this->quantity)) {
-   echo "<div class='alert alert-danger '>You can n't delete this delivery line. You can remove the line or do a reverse picking </div>";
+   echo "<div class='alert alert-danger '>You can't delete this delivery line. You can remove the line or do a reverse picking </div>";
    return -99;
   } else {
    return 1;

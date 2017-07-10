@@ -234,7 +234,7 @@ class sd_so_header extends dbObject {
  }
 
  public function _before_save() {
-  if (!empty($this->action)) {
+  if (empty($this->action)) {
    $this->_do_action();
   }
 

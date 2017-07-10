@@ -219,7 +219,7 @@ class sd_delivery_header extends dbObject {
      $dbc->rollback = true;
      return -99;
     }
-
+//    ============================
     $del_line = new sd_delivery_line();
     $del_line->sd_delivery_line_id = null;
     $del_line->sd_delivery_header_id = $sd_delivery_header_id;

@@ -3,15 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count/count.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/org/inventory/class_inventory.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/form.php</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count_entries/count_entries_template.php</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count_entries/count_entries.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count_entries/class_inv_count_entries.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count/class_inv_count_header.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count/count_template.php</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count_entries/class_inv_count_entries_v.inc</file>
+            <file>file:/F:/xampp/htdocs/MyERP/modules/sd/so/so.js</file>
+            <file>file:/F:/xampp/htdocs/MyERP/modules/sd/so/class_sd_so_line.inc</file>
+            <file>file:/F:/xampp/htdocs/MyERP/modules/ar/transaction/transaction.inc</file>
+            <file>file:/F:/xampp/htdocs/MyERP/search.php</file>
+            <file>file:/F:/xampp/htdocs/MyERP/modules/sd/delivery/class_sd_delivery_line.inc</file>
+            <file>file:/F:/xampp/htdocs/MyERP/modules/sd/delivery/delivery_template.php</file>
+            <file>file:/F:/xampp/htdocs/MyERP/modules/sd/so/class_sd_so_header.inc</file>
+            <file>file:/F:/xampp/htdocs/MyERP/modules/sd/delivery/delivery.inc</file>
+            <file>file:/F:/xampp/htdocs/MyERP/modules/ar/transaction/ar_transaction.inc</file>
+            <file>file:/F:/xampp/htdocs/MyERP/modules/sd/so/so_template.php</file>
+            <file>file:/F:/xampp/htdocs/MyERP/modules/sd/delivery/class_sd_delivery_header.inc</file>
+            <file>file:/F:/xampp/htdocs/MyERP/modules/sd/delivery/delivery.js</file>
         </group>
     </open-files>
 </project-private>
