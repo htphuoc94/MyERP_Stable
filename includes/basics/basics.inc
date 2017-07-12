@@ -144,6 +144,8 @@ require_once(INC_EXTENSIONS . DS . "file" . DS . "class_extn_file.inc");
  require_once(INC_EXTENSIONS . DS . "view" . DS . "result" . DS . "class_view_result.inc");
  require_once(INC_EXTENSIONS . DS . "report" . DS . "class_extn_report.inc");
  require_once(INC_EXTENSIONS . DS . "report" . DS . "class_extn_report_path.inc");
+ require_once(INC_EXTENSIONS . DS . "report" . DS . "bvdk" . DS . "class_extn_report_bvdk_header.inc");
+ require_once(INC_EXTENSIONS . DS . "report" . DS . "bvdk" . DS . "class_extn_report_bvdk_line.inc");
  require_once(INC_EXTENSIONS . DS . "report" . DS . "result" . DS . "class_extn_report_result.inc");
  require_once(INC_EXTENSIONS . DS . "web_tracking" . DS . "class_web_tracking.inc");
  require_once(INC_EXTENSIONS . DS . "url_alias" . DS . "class_ext_url_alias.inc");

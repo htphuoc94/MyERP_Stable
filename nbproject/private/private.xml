@@ -4,27 +4,34 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/includes/functions/functions.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count_schedule/class_inv_count_schedule.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/abc_valuation/class_inv_abc_valuation_result.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count/count.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/org/inventory/class_inventory.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/abc_valuation/class_inv_abc_valuation.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count_entries/count_entries_template.php</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/gl/ledger/json_ledger.php</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/sd/so/class_sd_so_header.inc</file>
             <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/includes/basics/json.basics.php</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count_entries/class_inv_count_entries.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/gl/journal/journal.inc</file>
             <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/includes/general_class/trait_dbObject_t.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/abc_assignment/abc_assignment.js</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count_entries/class_inv_count_entries_v.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/includes/general_class/class_inoform.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/sys/program_schedule/program_schedule.js</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/sys/program_schedule/class_sys_program_schedule.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/ent/sys/webpage/class_ent_sys_webpage_line.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/extensions/report/bvdk/class_extn_report_bvdk_header.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/gl/ledger/ledger.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/includes/functions/loader.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/ent/sys/webpage/ent_sys_webpage_template.php</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/pos/transaction/json_pos_transaction.php</file>
             <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/form.php</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/abc_assignment/class_inv_abc_assignment_header.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count_entries/count_entries.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count/class_inv_count_header.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/count/count_template.php</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/inv/abc_assignment/abc_assignment.inc</file>
-            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/sys/program_schedule/program_schedule_template.php</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/extensions/report/bvdk/class_extn_report_bvdk_line.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/hd/service_type/class_hd_service_type_header.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/includes/basics/basics.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/gl/journal/class_gl_journal_header.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/gl/journal/journal.js</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/gl/journal/journal_template.php</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/fa/asset/json_asset.php</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/gl/ledger/class_gl_ledger.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/extensions/report/bvdk/bvdk_template.php</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/pos/transaction/class_pos_transaction_line.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/ent/sys/webpage/class_ent_sys_webpage_header.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/extensions/report/class_extn_report.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/gl/journal/class_gl_journal_line.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/extensions/report/bvdk/report_bvdk.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/modules/sd/so/class_sd_so_line.inc</file>
+            <file>file:/D:/Task/TaoLapDeThi/htdocs/inoERP-master/inoerp22/includes/general_class/class_inosave.inc</file>
         </group>
     </open-files>
 </project-private>

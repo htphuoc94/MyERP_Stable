@@ -107,7 +107,7 @@ $('#document_type, .line_type').find("[data-bu_org_id_r='" + $('#bu_org_id').val
           var rowClass = '.' + $(this).closest('tr').prop('class');
           var item_id_m = $(this).closest('.tabContainer').find(rowClass).find('.item_id_m').val();
           var price_date = $(this).closest('.tabContainer').find(rowClass).find('.price_date').val();
-          var price_list_header_id = $(this).closest('#form_line').find(rowClass).find('.price_list_headerId').val();
+          var price_list_header_id = $(this).closest('#form_line').find(rowClass).find('.price_list_header_id').val();
           $.when(getPriceDetails({
            rowClass: rowClass,
            item_id_m: item_id_m,
@@ -156,7 +156,7 @@ $('#document_type, .line_type').find("[data-bu_org_id_r='" + $('#bu_org_id').val
   $('#tax_amount').val(total_tax);
 
   var header_amount = 0;
-  $('#form_line').find('.inv_line_price').each(function () {
+  $('#form_line').find('.line_price').each(function () {
    header_amount += (+$(this).val().replace(/(\d+),(?=\d{3}(\D|$))/g, "$1"));
   });
   $('#header_amount').val(header_amount);
