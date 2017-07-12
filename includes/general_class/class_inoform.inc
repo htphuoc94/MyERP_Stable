@@ -1047,10 +1047,10 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
   $search_class = gettext('Search'). ' ' . gettext(ucwords(str_replace('_', ' ', $class)));
   $search_class_gt = gettext($search_class);
   echo '<span class="big_popover"><a href="#" id="big_popover" ><i class="fa fa-search  clickable" 
-                                                                  title="Click here to open the search form" data-toggle="tooltip" ></i></a>
+                                                                  title="'. gettext("Click here to open the search form") .'" data-toggle="tooltip" ></i></a>
  <div id="popover-head" class="hide">' . $search_class_gt .
-  '<i title="Click Here To Make This Element Draggable"  class="fa fa-arrows medium small-left-padding make-draggable large-text clickable ">
-  </i> <span  class="close_big_popover f-right medium large-text clickable" aria-hidden="true" title="Close This Window">&times;</span></div>
+  '<i title="' . gettext("Click Here To Make This Element Draggable").'"  class="fa fa-arrows medium small-left-padding make-draggable large-text clickable ">
+  </i> <span  class="close_big_popover f-right medium large-text clickable" aria-hidden="true" title="' . gettext("Close This Window") . '">&times;</span></div>
  <div id="popover-content" class="hide"><div id="search-popover">';
   $class_o = $class;
   $$class_o = $$class;
@@ -1069,10 +1069,10 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
   $search_class_gt = gettext($search_class);
   echo '<label class="big_popover">' . gettext(trim(ucwords(str_replace(['_', 'id'], [' ', ''], $field_name)))) . '</label>';
   echo '<span class="big_popover"><a href="#" id="big_popover" ><i class="fa fa-search  clickable" 
-                                                                  title="Click here to open the search form" data-toggle="tooltip" ></i></a>
+                                                                  title="' . gettext("Click here to open the search form") . '" data-toggle="tooltip" ></i></a>
  <div id="popover-head" class="hide">' . $search_class_gt .
-  '<i title="Click Here To Make This Element Draggable" class="fa fa-arrows small-left-padding make-draggable medium large-text clickable ">
-  </i> <span  class="close_big_popover f-right medium large-text clickable" aria-hidden="true"  title="Close This Window">&times;</span></div>
+  '<i title="' . gettext("Click Here To Make This Element Draggable") . '" class="fa fa-arrows small-left-padding make-draggable medium large-text clickable ">
+  </i> <span  class="close_big_popover f-right medium large-text clickable" aria-hidden="true"  title="' . gettext("Close This Window") . '">&times;</span></div>
  <div id="popover-content" class="hide"><div id="search-popover">';
   $class_o = $class;
   $$class_o = $$class;
@@ -1087,7 +1087,7 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
  public function xxl_text_field_dr_withSearch($field_name, $div_class = "") {
   global $readonly, $class, $$class;
   echo '<label>' . '<i class="fa fa-search-plus ' . $field_name . ' select_popup clickable" '
-  . ' title="Click here to open the search form" data-toggle="tooltip"></i>';
+  . ' title="' . gettext("Click here to open the search form") . '" data-toggle="tooltip"></i>';
   echo gettext(ucwords(str_replace('_', ' ', $field_name))) . '</label>';
   echo $this->text_field($field_name, $$class->$field_name, '20', $field_name, $div_class, '', 1);
  }
@@ -1916,10 +1916,10 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
    }
    $element_select_field .= '<option value="' . $key . '" ';
    $element_select_field .= $selected;
-   $element_select_field .= '>' . $arraValue . '</option>';
+   $element_select_field .= '>' . gettext($arraValue) . '</option>';
   }
   if ($convertToText == 1) {
-   $element_select_field .= "<option value=\"newentry\"  class=\"bold blue\">New Entry</option>";
+   $element_select_field .= "<option value=\"newentry\"  class=\"bold blue\">" . gettext("New Entry") . "</option>";
   }
   $element_select_field .= '</select>';
 
@@ -1958,10 +1958,10 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
    }
    $element_select_field .= '<option value="' . $key . '" ';
    $element_select_field .= $selected;
-   $element_select_field .= '>' . $arraValue . '</option>';
+   $element_select_field .= '>' . gettext($arraValue) . '</option>';
   }
   if ($convertToText == 1) {
-   $element_select_field .= "<option value=\"newentry\"  class=\"bold blue\">New Entry</option>";
+   $element_select_field .= "<option value=\"newentry\"  class=\"bold blue\">" . gettext("New Entry") . "</option>";
   }
   $element_select_field .= '</select>';
 
@@ -2007,7 +2007,7 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
     $idvalue = "radio_{$name}_" . $k + 1;
     $element_radio_field .= "<input type='radio'  value=\"$ele_val\" name=\"$bracketName\" class=\"radio $divClass $name\"  ";
     $element_radio_field .= " id=\"$idvalue\" $readonly $required $disabled $selected >";
-    $element_radio_field .= " <label for  id=\"$idvalue\"> $ele_label </label>";
+    $element_radio_field .= " <label for  id=\"$idvalue\">" . gettext($ele_label) . "</label>";
    }
   }
   $element_radio_field .= '</div>';
@@ -2077,13 +2077,13 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
      $objectDescriptionKey = strtolower($objectDescriptionKey);
      $newValue = $record->$objectDescriptionKey;
     }
-    $element_select_field .= $newValue;
+    $element_select_field .= gettext($newValue);
     $element_select_field .= '</option>';
    }
   }
 
   if ($convertToText == 1) {
-   $element_select_field .= "<option value=\"newentry\"  class=\"bold blue\">New Entry</option>";
+   $element_select_field .= "<option value=\"newentry\"  class=\"bold blue\">" . gettext("New Entry") . "</option>";
   }
   $element_select_field .= '</select>';
 
@@ -2146,13 +2146,13 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
     } else {
      $newValue = $record->$objectDescriptionKey;
     }
-    $element_select_field .= $newValue;
+    $element_select_field .= gettext($newValue);
     $element_select_field .= '</option>';
    }
   }
 
   if ($convertToText == 1) {
-   $element_select_field .= "<option value=\"newentry\"  class=\"bold blue\">New Entry</option>";
+   $element_select_field .= "<option value=\"newentry\"  class=\"bold blue\">" . gettext("New Entry") . "</option>";
   }
   $element_select_field .= '</select>';
 
@@ -2223,13 +2223,13 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
     } else {
      $newValue = $record->$ob_desc;
     }
-    $element_select_field .= $newValue;
+    $element_select_field .= gettext($newValue);
     $element_select_field .= '</option>';
    }
   }
 
   if ($convertToText == 1) {
-   $element_select_field .= "<option value=\"newentry\"  class=\"bold blue\">New Entry</option>";
+   $element_select_field .= "<option value=\"newentry\"  class=\"bold blue\">". gettext("New Entry") . "</option>";
   }
   $element_select_field .= '</select>';
 
@@ -2282,7 +2282,7 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
   $element_extra_field =  '<label class="ino-checkbox switch">';
   $element_extra_field .= "<input type=\"checkbox\" name=\"$bracketName\"  class=\"checkBox $name $class_name \" id=\"$id\" 
                                value=\"1\"  $checked $readonly>";
-  $element_extra_field .=  '<div class="slider"><span class="on-color">Yes</span><span class="off-color">No</span></div></label>';
+  $element_extra_field .=  '<div class="slider"><span class="on-color">' . gettext("Yes") . '</span><span class="off-color">' . gettxet("No") . '</span></div></label>';
   return $element_extra_field;
  }
 
@@ -2290,7 +2290,7 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
   global $class, $$class;
   echo '<label>' . gettext(ucwords(str_replace('_', ' ', $name))) . ' </label>';
   echo $this->checkBox_field($name, $value, $id, $class_name, $readonly);
-  echo '<div class="slider"><span class="on-color">ON</span><span class="off-color">OFF</span></div></label>';
+  echo '<div class="slider"><span class="on-color">' . gettext("ON") . '</span><span class="off-color">' . gettext("OFF") . '</span></div></label>';
  }
 
  public function l_checkBox_field_d($field_name) {
@@ -2298,7 +2298,7 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
   echo '<label>' . gettext(ucwords(str_replace('_', ' ', $field_name))) . '</label>';
   echo '<label class="ino-checkbox switch">';
   echo $this->checkBox_field($field_name, $$class->$field_name, $field_name, '', $this->readonly);
-  echo '<div class="slider"><span class="on-color">Yes</span><span class="off-color">No</span></div></label>';
+  echo '<div class="slider"><span class="on-color">' . gettext("Yes") . '</span><span class="off-color">' . gettext("No") . '</span></div></label>';
  }
 
  public function l_checkBox_field_dr($field_name) {
@@ -2306,7 +2306,7 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
   echo '<label>' . gettext(ucwords(str_replace('_', ' ', $field_name))) . '</label>';
   echo '<label class="ino-checkbox switch">';
   echo $this->checkBox_field($field_name, $$class->$field_name, $field_name, '', 1);
-  echo '<div class="slider"><span class="on-color">Yes</span><span class="off-color">No</span></div></label>';
+  echo '<div class="slider"><span class="on-color">' . gettext('Yes') . '</span><span class="off-color">' . gettext("No") . '</span></div></label>';
  }
 
  public function checkBox_field_d($field_name) {
@@ -2397,7 +2397,7 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
   $stmt_rtn .= '<div id="tabsLine">
  <ul class="tabMain">';
   for ($i = 0; $i < $no_of_tabs; $i++) {
-   $stmt_rtn .= "<li><a href=\"#tabsLine-$i\">Tab No $i </a></li>";
+   $stmt_rtn .= "<li><a href=\"#tabsLine-$i\">". gettext("Tab No") . " $i </a></li>";
   }
   $stmt_rtn .= ' </ul>
  <div class="tabContainer"> ';
@@ -2405,7 +2405,7 @@ $valueAfterDecimal = htmlentities($valueAfterDecimal, ENT_QUOTES | ENT_HTML5, 'U
   for ($i = 0; $i < $no_of_tabs; $i++) {
    $stmt_rtn .= "<div id=\"tabsLine-$i\" class='tabContent'>";
    $stmt_rtn .= "<table class=\"normal\"><thead><tr>";
-   $stmt_rtn .= "<th>Seq#</th>";
+   $stmt_rtn .= "<th>". gettext('Seq') ."#</th>";
    if ($i == 0) {
     $stmt_rtn .= "<th>" . $this->action_message . "</th>";
    }

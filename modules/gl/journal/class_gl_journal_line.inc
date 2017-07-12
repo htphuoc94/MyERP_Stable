@@ -155,11 +155,11 @@ class gl_journal_line extends dbObject {
      $gjl->save();
     } catch (Exception $e) {
      $this->rollback = true;
-     echo " GL Journa line status change failed!" . $e->getMessage();
+     echo gettext ("GL Journal line status change failed!") . $e->getMessage();
     }
    } catch (Exception $e) {
     $this->rollback = true;
-    echo " GL Balance Update Failed!" . $e->getMessage();
+    echo gettext("GL Balance Update Failed!") . $e->getMessage();
    }
   }
  }
@@ -183,7 +183,7 @@ class gl_journal_line extends dbObject {
    try {
     $new_gjl->save();
    } catch (Exception $e) {
-    echo " Failed in reversing journal lines " . $e->getMessage();
+    echo gettext ("Failed in reversing journal lines!") . $e->getMessage();
    }
   }
  }

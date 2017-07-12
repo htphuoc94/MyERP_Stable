@@ -15,11 +15,11 @@
          <a name="show" href="form.php?class_name=gl_period&<?php echo "mode=$mode"; ?>" class="show document_id gl_ledger_id ">
           <i class="fa fa-refresh"></i></a> 
         </li>
-        <li><label><?php echo gettext('Current Open Period') ?></label><?php echo $cop_stmt; ?></li>
+        <li><label><?php echo gettext('Current Open Period') ?></label><?php echo gettext($cop_stmt); ?></li>
         <li><?php $f->l_select_field_from_object('gl_calendar_id', $next_open_period, 'gl_calendar_id', 'name', '', 'new_gl_calendar_id', '', '', $readonly); ?></li>
-        <li><?php $f->l_text_field('status', 'AVAILABLE', '', '', 'status', '', 1); ?></li>
-        <li><label><?php echo gettext('Next Period') ?></label><input type="button" class="btn btn-warning" role="button" id="open_next_period" value="Open" 
-                                                                      <?php echo ($readonly == 1) ? 'disabled' : ''; ?>				></li>
+        <li><?php $f->l_text_field('status', gettext('AVAILABLE'), '', '', 'status', '', 1); ?></li>
+        <li><label><?php echo gettext('Next Period') ?></label><input type="button" class="btn btn-warning" role="button" id="open_next_period" value="<?php echo gettext('Open')?>" 
+                                                                      <?php echo ($readonly == 1) ? gettext('Disabled') : ''; ?>				></li>
        </ul>
       <div id="tabsHeader-2" class="tabContent">
        <div id="comments">
@@ -51,7 +51,7 @@
    <div id="tabsLine">
     <ul class="tabMain">
      <li><a href="#tabsLine-1"><?php echo gettext('Calendar View') ?></a></li>
-     <li><a href="#tabsLine-2">Future </a></li>
+     <li><a href="#tabsLine-2"><?php echo gettext('Future') ?></a></li>
     </ul>
     <div class="tabContainer"> 
 
@@ -91,11 +91,11 @@
            echo ino_inline_action($$class->gl_period_id, array('ledger_id' => $gl_period->ledger_id));
            ?>
           </td>
-          <td><?php            $f->text_field_dsr('gl_period_id');  ?></td>
+          <td><?php $f->text_field_dsr('gl_period_id');  ?></td>
           <td><?php $f->text_field_d('period_name') ?></td>
           <td><?php
            echo form::select_field_from_object_ap(array('name' => 'status', 'ob' => gl_period::gl_period_status(),
-            'ob_value' => 'option_line_code', 'ob_desc' => 'option_line_value', 'value' => $gl_period->status, 'disabled' => $gl_period->en_dis));
+            'ob_value' => 'option_line_code', 'ob_desc' => 'option_line_value', 'value' => gettext($gl_period->status), 'disabled' => $gl_period->en_dis));
            ?></td>
           <td class="yearPicker"><?php echo $f->text_field_ap(['name' => 'c_year', 'value' => $cal_i->c_year, 'class_name' => 'small', 'readonly' => true]); ?></td>
           <td><?php echo $f->text_field_ap(['name' => 'c_quarter', 'value' => $cal_i->c_quarter, 'class_name' => 'small', 'readonly' => true]); ?></td>
@@ -103,7 +103,7 @@
           <td><?php echo $f->date_fieldAnyDay('from_date', $cal_i->from_date, 'medium'); ?></td>
           <td><?php echo $f->date_fieldAnyDay('to_date', $cal_i->to_date, 'medium'); ?></td>
           <td><?php echo $f->text_field_ap(['name' => 'cal_period_name', 'value' => $cal_i->name, 'class_name' => 'medium', 'readonly' => true]); ?><?php // echo form::text_field('cal_period_name', $gl_period->name, 15, '', 1, '', '', 1);     ?></td>
-          <td><?php $f->text_field_dsr('gl_calendar_id'); ?></td>
+          <td><?php echo $f->text_field_dsr('gl_calendar_id'); ?></td>
          </tr>
          <?php
          $gl_period_object_ai->next();

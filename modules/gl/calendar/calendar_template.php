@@ -54,7 +54,7 @@
              <td><?php form::number_field_wids('c_number'); ?></td>
              <td><?php echo $f->date_fieldAnyDay_m('from_date', $$class->from_date, ''); ?></td>
              <td><?php echo $f->date_fieldAnyDay_m('to_date', $$class->to_date, ''); ?></td>
-             <td><?php $f->text_field_widr('name','always_readonly'); ?></td>
+             <td><?php $f->text_field_widr('name','readonly'); ?></td>
             </tr>
             <?php
             $calendar_object_ai->next();

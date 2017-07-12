@@ -253,7 +253,7 @@ class sd_so_header extends dbObject {
    $bu_org_id = $this->bu_org_id;
    $so_number = $bu_org_id . '-' . $sd_so_header_id;
    $this->so_number = $so_number;
-   echo '<br/> New SO number is ' . $so_number;
+   echo '<br/> ' . gettext("New SO number is ") . $so_number;
    $this->update_soNumber();
   }
  }

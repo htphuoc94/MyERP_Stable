@@ -1089,7 +1089,7 @@ EOD;
 	 }
 	 $element_select_field .= '<option value="' . $key . '" ';
 	 $element_select_field .= $selected;
-	 $element_select_field .= '>' . $arraValue . '</option>';
+	 $element_select_field .= '>' . gettext($arraValue) . '</option>';
 	}
 	$element_select_field .= '</select>';
 

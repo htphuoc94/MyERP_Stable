@@ -67,7 +67,7 @@
          <tr><?php
           if (!empty($coa_id_h)) {
            foreach (coa::coa_display_by_coaId($coa_id_h) as $key => $value) {
-            echo!empty($value) ? "<th>$value : </th>" : '';
+            echo !empty($value) ? "<th>" . gettext($value) . " : </th>" : '';
            }
           }
           ?>

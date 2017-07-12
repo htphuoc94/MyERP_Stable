@@ -80,7 +80,7 @@ class gl_ledger extends dbObject {
  public $search = [
   '_update_path' => 'form.php?class_name=gl_ledger',
   '_show_update_path' => 1,
-  '_update_action_meassge' => 'Update Ledger',
+  '_update_action_meassge' => 'Update',
   '_show_view_path' => 1,
 //		 '_view_action_meassge' => 'View',
 //		 '_extra_path' => '',

@@ -28,7 +28,7 @@ inoERP
        <li><?php $f->l_text_field_dm('lead_number'); ?> 					</li>
        <li><?php $f->l_text_field_dm('subject'); ?> 					</li>
        <li><?php $f->l_select_field_from_object('lead_type', sd_lead::lead_type(), 'option_line_code', 'option_line_value', $$class->lead_type, 'lead_type'); ?> 					</li>
-       <li><?php $f->l_select_field_from_array('status', sd_lead::$status_a, $$class->status, 'status', '', '', 1, 1); ?> 					</li>
+       <li><?php $f->l_select_field_from_array('status', sd_lead::$status_a, gettext($$class->status), 'status', '', '', 1, 1); ?> 					</li>
        <li><?php $f->l_select_field_from_array('priority', dbObject::$position_array, $$class->priority); ?> 					</li>
        <li><?php $f->l_text_field_d('referral_source'); ?> 					</li>
        <li><?php $f->l_select_field_from_object('sales_channel', sd_lead::sales_channel(), 'option_line_code', 'option_line_value', $$class->sales_channel, 'sales_channel'); ?> 					</li>
@@ -125,7 +125,7 @@ inoERP
       <?php echo $f->contact_field('sd_lead', $$class->sd_lead_id, $all_contacts); ?>
      </div>
      <div id="tabsLine-4"  class="tabContent">
-      <div><label class="text_area_label">Product, Service & Other Opportunity Details  :</label><?php
+      <div><label class="text_area_label"><?php echo gettext("Product, Service & Other Opportunity Details :") ?></label><?php
        echo $f->text_area_ap(array('name' => 'details', 'value' => $$class->details,
         'row_size' => '10', 'column_size' => '90'));
        ?> 	

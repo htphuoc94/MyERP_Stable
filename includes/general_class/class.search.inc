@@ -244,7 +244,7 @@ class search extends dbObject {
 	$search_result .= '<div id="tabsLine">
 				 <ul class="tabMain">';
 	for ($i = 0; $i < $no_of_tabs; $i++) {
-	 $search_result .= "<li><a href=\"#tabsLine-$i\">Tab No $i </a></li>";
+	 $search_result .= "<li><a href=\"#tabsLine-$i\"> ". gettext("Tab No") . " $i </a></li>";
 	}
 	$search_result .= ' </ul>
 				 <div class="tabContainer"> ';
@@ -410,7 +410,7 @@ class search extends dbObject {
 
 	if (!empty($this->_search_functions)) {
 	 foreach ($this->_search_functions as $key => $value) {
-		$search_form_statement .= "<li><label class=\"label_$key\"> $key </label>";
+		$search_form_statement .= "<li><label class=\"label_$key\">" . gettext($key) . "</label>";
 		if (method_exists($class_obj, $value)) {
 		 $search_form_statement .= call_user_func(array($class_obj, $value));
 		} else if (function_exists($value)) {
@@ -436,7 +436,7 @@ class search extends dbObject {
 		$readonly_field = '  ';
 	 }
 	 $bracketName = $value . '[]';
-	 $search_form_statement .= "<li><label class=\"label_$value\">" . gettext(ucwords(str_replace('_', ' ', $value))) . " </label>";
+	 $search_form_statement .= "<li><label class=\"label_$value\">" . gettext(ucwords(str_replace('_', ' ', $value))) . "</label>";
 	 $search_form_statement .= "<input type=\"text\" name=\"$bracketName\" $readonly_field class=\"$value text_search \"   size=\"15\" value=\"$get_value\" >";
 	 $search_form_statement .= '</li>';
 	}
@@ -476,7 +476,7 @@ class search extends dbObject {
 	 $search_form_statement .= $selected_search_order_by;
 	 $search_form_statement .= '>' . $value . '</option>';
 	}
-	$search_form_statement .= "<option value=\"remove\" class=\"$srch_div_cls remove remove_option\">Remove</option>";
+	$search_form_statement .= "<option value=\"remove\" class=\"$srch_div_cls remove remove_option\">" . gettext("Remove") . "</option>";
 	$search_form_statement .= '</select>';
 
 	//ascending or descnding
@@ -494,7 +494,7 @@ class search extends dbObject {
 
 	//Records group by
 	if (!empty($this->_group_by)) {
-	 $search_form_statement .= '<li><label> Group By</label>';
+	 $search_form_statement .= '<li><label>' . gettext('Group By') . '</label>';
 	 $search_form_statement .= "<select name=\"group_by\" id=\"group_by\" class='$srch_div_cls group_by'>";
 	 $search_form_statement .= "<option value='' ></option>";
 	 foreach ($this->_group_by as $key => $value) {
@@ -575,7 +575,7 @@ class search extends dbObject {
 	$program_form_statement .= '<ul class="tabContent">';
 	if (!empty($this->_search_functions)) {
 	 foreach ($this->_search_functions as $key => $value) {
-		$program_form_statement .= "<li class='prg' id='" . $value . "' ><label class=\"label_$key\"> $key</label>";
+		$program_form_statement .= "<li class='prg' id='" . $value . "' ><label class=\"label_$key\">" . gettext($key) . "</label>";
 		if (method_exists($class_obj, $value)) {
 		 $program_form_statement .= call_user_func(array($class_obj, $value));
 		} else if (function_exists($value)) {
@@ -611,7 +611,7 @@ class search extends dbObject {
 	if (!empty($search_array)) {
 	 foreach ($search_array as $key => $search_value) {
 		$program_form_statement .= '<option value="' . htmlentities($search_value) . '"';
-		$program_form_statement .= '>' . $search_value . '</option>';
+		$program_form_statement .= '>' . gettext($search_value) . '</option>';
 	 }
 	}
 

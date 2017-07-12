@@ -13,8 +13,8 @@ if (!empty($_GET['search_class_name'])) {
  $all_search_paths = $path->findAll_searchPaths();
  $search_result_statement = "";
  $search_result_statement .= "<table class=\"table normal\"><thead><tr>";
- $search_result_statement .= '<th> Module </th>';
- $search_result_statement .= '<th> Search Details </th>';
+ $search_result_statement .= '<th>' . gettext('Module') . '</th>';
+ $search_result_statement .= '<th>' . gettext('Search Details') .'</th>';
  $search_result_statement .='</tr></thead>';
  If (!empty($all_search_paths)) {
   $search_result_statement .= '<tbody>';

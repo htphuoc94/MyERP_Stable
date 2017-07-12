@@ -61,7 +61,7 @@ class coa extends dbObject {
  public $initial_search = [
   'coa_structure_id',
   'description',
-  'coa_sequence'
+//  'coa_sequence'
  ];
  public $fields_inForm_notInDataBase = [
  ];

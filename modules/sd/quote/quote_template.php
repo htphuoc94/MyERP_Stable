@@ -88,7 +88,7 @@ inoERP
       <ul class="column five_column">
        <li id="document_print"><label><?php echo gettext('Document Print') ?></label>
         <a class="button" target="_blank"
-           href="<?php echo HOME_URL ?>modules/sd/quote/quote_print.php?sd_quote_header_id=<?php echo!(empty($$class->sd_quote_header_id)) ? $$class->sd_quote_header_id : ""; ?>" >Print Quote</a>
+           href="<?php echo HOME_URL ?>modules/sd/quote/quote_print.php?sd_quote_header_id=<?php echo!(empty($$class->sd_quote_header_id)) ? $$class->sd_quote_header_id : ""; ?>" ><?php echo gettext("Print Quote") ?></a>
        </li>
        <li id="document_status"><label><?php echo gettext('Action') ?></label>
         <?php echo $f->select_field_from_array('action', sd_quote_header::$action_a, $$class->action, 'action'); ?>

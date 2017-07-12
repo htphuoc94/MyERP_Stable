@@ -24,12 +24,12 @@ if (!isset($readonly1)) {
       echo $f->hidden_field_withId('coa_id', $$class->coa_id);    ?></li>
       <li><?php $f->l_select_field_from_object('currency', option_header::currencies(), 'option_line_code', 'option_line_value', $$class->currency, 'ledger_currency', '', 1, 1); ?>  </li>
       <li><?php $f->l_select_field_from_object('doc_currency', option_header::currencies(), 'option_line_code', 'option_line_value', $$class->doc_currency, 'doc_currency', '', 1, $readonly1); ?>  </li>
-      <li><label>Period Name(3)</label><?php echo $period_name_stmt; ?></li>
+      <li><label><?php echo gettext("Period Name") ?></label><?php echo $period_name_stmt; ?></li>
       <li><?php $f->l_date_fieldFromToday_m('document_date', $$class->document_date) ?></li>
       <li><?php $f->l_text_field_dm('journal_name'); ?></li>
       <li><?php $f->l_text_field_d('description'); ?></li>
       <li><?php $f->l_select_field_from_object('balance_type', $$class->gl_balance_type(), 'option_line_code', 'option_line_value', $$class->balance_type, 'balance_type', '', 1, $readonly1); ?></li>
-      <li><?php $f->l_select_field_from_array('status', $$class->status_a, $$class->status, 'status','always_readonly', 1); ?></li>
+      <li><?php $f->l_select_field_from_array('status', $$class->status_a, $$class->status, 'status','readonly', 1); ?></li>
       <li><?php $f->l_date_fieldFromToday_d('post_date', $$class->post_date) ?></li>
       <li id="document_status"><?php $f->l_select_field_from_array('action', $action_a, $$class->action, 'action'); ?></li>
      </ul>
@@ -59,7 +59,7 @@ if (!isset($readonly1)) {
          <li><?php $f->l_text_field_d('reference_type'); ?></li>
          <li><?php $f->l_text_field_d('reference_key_name'); ?></li>
          <li><?php $f->l_text_field_d('reference_key_value'); ?></li>
-         <li><label><?php echo gettext('View Ref Doc') ?></label><?php echo $ref_doc_stmt; ?></li>
+         <li><label><?php echo gettext('View Ref Doc') ?></label><?php echo gettext($ref_doc_stmt); ?></li>
         </ul>
        </div>
       </div>
