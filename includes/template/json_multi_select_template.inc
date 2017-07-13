@@ -51,7 +51,7 @@
       $no_of_tab_count = 0;
      }
      for ($i = 0; $i < $no_of_tabs; $i++) {
-      echo "<li><a href=\"#tabsLine-$i\">Tab No $i </a></li>";
+      echo "<li><a href=\"#tabsLine-$i\">" . gettext("Tab No") . " $i </a></li>";
      }
      ?>
     </ul>
@@ -66,11 +66,11 @@
          <tr>
           <?php
           if ($i == 0) {
-           echo "<th>Select<br><i class='select_all fa fa-level-down clickable' title='Select All'></i>&nbsp;<i class='deselect_all fa fa-level-up clickable' title='Deselect All'></i></th>";
+           echo "<th>". gettext("Select") . "<br><i class='select_all fa fa-level-down clickable' title='" . gettext("Select All") . "'></i>&nbsp;<i class='deselect_all fa fa-level-up clickable' title='Deselect All'></i></th>";
           }
           echo '<th>' . gettext(ucwords(str_replace('_', ' ', $primary_column_v))) . '</th>';
           if (($i == 0) && (!empty($multi_selct_input_fields) && !is_array($multi_selct_input_fields))) {
-           echo '<th>Line Action</th>';
+           echo '<th>' . gettext("Line Action") . '</th>';
           }
           $new_start = ($i * ($no_of_columns_per_tab - 1)) + $i;
           $new_end = $new_start + ($no_of_columns_per_tab - 1);
@@ -125,7 +125,7 @@
             }
             if (($i == 0) && ($multi_select_select_fields_not_shown) && !empty($multi_select_select_fields) && is_array($multi_select_select_fields)) {
              foreach ($multi_select_select_fields as $mssf_key => $mssf_val) {
-              echo '<td>' . $mssf_val . '</td>';
+              echo '<td>' . gettext ($mssf_val) . '</td>';
              }
              $multi_select_select_fields_not_shown = false;
             }
@@ -155,7 +155,7 @@
               $field_method_name = 'multi_select_field_' . $field_name;
               if (method_exists($class, $field_method_name)) {
                $field_stmt1 = call_user_func(array($class, $field_method_name), $records);
-               echo "<td> $field_stmt1 </td>";
+               echo "<td>" . gettext($field_stmt1) / "</td>";
               } else {
                echo "<td><input type=\"text\" name=\"$bracketName\" class=\"$div_class_name text $all_columns[$k]\" value=\" \" $readonly size=\"12\"> </td>";
               }

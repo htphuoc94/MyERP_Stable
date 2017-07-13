@@ -146,7 +146,7 @@ if ($continue) {
  }
 } else {
  $continue = false;
- echo "<h2>Could n't call the header</h2>";
+ echo "<h2>" . gettext("Couldn't call the header") . "</h2>";
  return;
 }
 If (!empty($action_class_i) && property_exists($action_class_i, 'js_fileName')) {
