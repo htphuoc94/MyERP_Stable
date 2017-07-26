@@ -33,34 +33,34 @@ function autoLoadAll($className) {
 
  switch (count($paths)) {
 	case 2:
-	 $filename = WWW_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . DS . 'class_' . $className . ".inc";
+	 $filename = HOME_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . DS . 'class_' . $className . ".inc";
 	 if (!is_readable($filename)) {
-		$filename = WWW_DIR . DS . $doc_type . DS . $paths[0] . DS . 'class_' . $className . ".inc";
+		$filename = HOME_DIR . DS . $doc_type . DS . $paths[0] . DS . 'class_' . $className . ".inc";
 	 }
 	 break;
 
 	case 3:
-	 $filename = WWW_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . DS . 'class_' . $className . ".inc";
+	 $filename = HOME_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . DS . 'class_' . $className . ".inc";
 	 if (!is_readable($filename)) {
-		$filename = WWW_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . '_' . $paths[2] . DS . 'class_' . $className . ".inc";
+		$filename = HOME_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . '_' . $paths[2] . DS . 'class_' . $className . ".inc";
 	 }
 	 break;
 
 	case 4:
-	 $filename = WWW_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . '_' . $paths[2] . DS . 'class_' . $className . ".inc";
+	 $filename = HOME_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . '_' . $paths[2] . DS . 'class_' . $className . ".inc";
 	 if (!is_readable($filename)) {
-		$filename = WWW_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . DS . $paths[2] . '_' . $paths[3] . DS . 'class_' . $className . ".inc";
+		$filename = HOME_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . DS . $paths[2] . '_' . $paths[3] . DS . 'class_' . $className . ".inc";
 		if (!is_readable($filename)) {
-		 $filename = WWW_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . DS . $paths[2] . DS . 'class_' . $className . ".inc";
+		 $filename = HOME_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . DS . $paths[2] . DS . 'class_' . $className . ".inc";
 		}
 	 }
 	 break;
 
 	case 5:
 	case 6:
-	 $filename = WWW_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . '_' . $paths[2] . DS . $paths[3] . '_' . $paths[4] . DS . 'class_' . $className . ".inc";
+	 $filename = HOME_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . '_' . $paths[2] . DS . $paths[3] . '_' . $paths[4] . DS . 'class_' . $className . ".inc";
 	 if (!is_readable($filename)) {
-		$filename = WWW_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . '_' . $paths[2] . DS . $paths[3] . DS . 'class_' . $className . ".inc";
+		$filename = HOME_DIR . DS . $doc_type . DS . $paths[0] . DS . $paths[1] . '_' . $paths[2] . DS . $paths[3] . DS . 'class_' . $className . ".inc";
 	 }
 	 break;
 
@@ -73,25 +73,14 @@ function autoLoadAll($className) {
  }
 }
 
-/*
- * 1. class_extn_file.inc in file
- * 2. class_site_info.inc in site_info
- * 3.
- * 4. class_extn_folder_all_v in folder \all_v
- */
-
 function extension_auto_load(&$paths, $className) {
  $filename = HOME_DIR . DS . 'extensions' . DS . $paths[1] . DS . 'class_' . $className . ".inc";
  if (!is_readable($filename)) {
 	$filename = HOME_DIR . DS . 'extensions' . DS . $paths[1] . '_' . $paths[2] . DS . 'class_' . $className . ".inc";
-	if (!is_readable($filename)) {
-	 $filename = HOME_DIR . DS . 'extensions' . DS . $paths[1] . DS . $paths[2] . DS . 'class_' . $className . ".inc";
-	 	if (!is_readable($filename)) {
-	 $filename = HOME_DIR . DS . 'extensions' . DS . $paths[1] . DS . $paths[2]. '_' . $paths[3] . DS . 'class_' . $className . ".inc";
-	}
-	}
  }
 
+// echo '<br>' . $className;
+// echo '<br>' . $filename;
  if (!empty($filename) && is_readable($filename)) {
 	require $filename;
  }
@@ -105,15 +94,15 @@ function autoLoadModules($className) {
 	$path .= $paths[1] . '/';
  }
 // $path .= $paths[2] . '/';
- $filename = WWW_DIR . "/modules/" . $path . 'class_' . $className . ".inc";
- $dirname = WWW_DIR . DS . 'modules' . DS . $paths[0];
+ $filename = HOME_DIR . "/modules/" . $path . 'class_' . $className . ".inc";
+ $dirname = HOME_DIR . DS . 'modules' . DS . $paths[0];
  if (is_readable($filename)) {
 	require $filename;
- } elseif (is_readable(WWW_DIR . '/modules/' . $path . 'class_' . $className . ".inc")) {
-	require WWW_DIR . '/modules/' . $path . 'class_' . $className . ".inc";
+ } elseif (is_readable(HOME_DIR . '/modules/' . $path . 'class_' . $className . ".inc")) {
+	require HOME_DIR . '/modules/' . $path . 'class_' . $className . ".inc";
  } elseif (!empty($paths[2])) {
 	$path .= $paths[2] . '/';
-	$filename = WWW_DIR . '/modules/' . $path . 'class_' . $className . ".inc";
+	$filename = HOME_DIR . '/modules/' . $path . 'class_' . $className . ".inc";
 	if (is_readable($filename)) {
 	 require $filename;
 	 return;
@@ -163,7 +152,7 @@ function autoLoadExtensions($className) {
  if (is_readable($filename)) {
 	require $filename;
  } else {
-	$filename = WWW_DIR . '/extensions/' . $path . 'class_' . $className . ".inc";
+	$filename = HOME_DIR . '/extensions/' . $path . 'class_' . $className . ".inc";
 	if (is_readable($filename)) {
 	 require $filename;
 	}
@@ -181,12 +170,12 @@ function autoLoadTparty($className) {
  $filename = getcwd() . "/tparty/extensions/" . $path . 'class_' . $className . ".inc";
  if (is_readable($filename)) {
 	require $filename;
- } elseif (is_readable(WWW_DIR . '/tparty/extensions/' . $path . 'class_' . $className . ".inc")) {
-	require WWW_DIR . '/tparty/extensions/' . $path . 'class_' . $className . ".inc";
+ } elseif (is_readable(HOME_DIR . '/tparty/extensions/' . $path . 'class_' . $className . ".inc")) {
+	require HOME_DIR . '/tparty/extensions/' . $path . 'class_' . $className . ".inc";
  } elseif (is_readable(getcwd() . '/tparty/modules/' . $path . 'class_' . $className . ".inc")) {
 	require getcwd() . '/tparty/modules/' . $path . 'class_' . $className . ".inc";
- } elseif (is_readable(WWW_DIR . '/tparty/modules/' . $path . 'class_' . $className . ".inc")) {
-	require WWW_DIR . '/tparty/modules/' . $path . 'class_' . $className . ".inc";
+ } elseif (is_readable(HOME_DIR . '/tparty/modules/' . $path . 'class_' . $className . ".inc")) {
+	require HOME_DIR . '/tparty/modules/' . $path . 'class_' . $className . ".inc";
  }
 }
 
@@ -197,7 +186,7 @@ function autoLoadRegex($className) {
 	$search_dir = 'modules';
  }
 
- $dir = new RecursiveDirectoryIterator(WWW_DIR . DS . $search_dir);
+ $dir = new RecursiveDirectoryIterator(HOME_DIR . DS . $search_dir);
  $ite = new RecursiveIteratorIterator($dir);
  $files = new RegexIterator($ite, '([^\s]+(\.(?i)(inc))$)', RegexIterator::GET_MATCH);
  $class_file_name = 'class_' . $className . '.inc';
@@ -227,7 +216,7 @@ function pa($array = "") {
 
 function set_default_theme(&$loggedin_user = '') {
  if (!empty($loggedin_user) && !empty($loggedin_user->default_theme)) {
-	$theme_dir = WWW_DIR . DS . 'themes' . DS . $loggedin_user->default_theme;
+	$theme_dir = HOME_DIR . DS . 'themes' . DS . $loggedin_user->default_theme;
 	if (is_dir($theme_dir)) {
 	 $_SESSION['default_theme'] = $loggedin_user->default_theme;
 	}
@@ -236,7 +225,7 @@ function set_default_theme(&$loggedin_user = '') {
  if (empty($_SESSION['default_theme'])) {
 	$extn_theme = extn_theme::find_default_theme();
 	if ($extn_theme) {
-	 $theme_dir_1 = WWW_DIR . DS . 'themes' . DS . $extn_theme->theme_name;
+	 $theme_dir_1 = HOME_DIR . DS . 'themes' . DS . $extn_theme->theme_name;
 	} else {
 	 $theme_dir_1 = null;
 	}
@@ -253,13 +242,13 @@ function ino_perPageSql($per_page, $offset = 0) {
  switch (DB_TYPE) {
 	case 'ORACLE' :
 	 $lessthan_v = $offset + $per_page;
-	 $sql .= " rownum >= $offset ";
-	 $sql .= " AND rownum <= $lessthan_v ";
+	 $sql .=" rownum >= $offset ";
+	 $sql .=" AND rownum <= $lessthan_v ";
 	 break;
 
 	default:
-	 $sql .= " LIMIT {$per_page} ";
-	 $sql .= " OFFSET {$offset}";
+	 $sql .=" LIMIT {$per_page} ";
+	 $sql .=" OFFSET {$offset}";
 	 break;
  }
 
@@ -271,13 +260,13 @@ function ino_perPageSql_i($sql, $per_page, $offset = 0) {
  switch (DB_TYPE) {
 	case 'ORACLE' :
 	 $lessthan_v = $offset + $per_page;
-	 $sql .= " AND rownum >= $offset ";
-	 $sql .= " AND rownum <= $lessthan_v ";
+	 $sql .=" AND rownum >= $offset ";
+	 $sql .=" AND rownum <= $lessthan_v ";
 	 break;
 
 	default:
-	 $sql .= " LIMIT {$per_page} ";
-	 $sql .= " OFFSET {$offset}";
+	 $sql .=" LIMIT {$per_page} ";
+	 $sql .=" OFFSET {$offset}";
 	 break;
  }
 
@@ -352,8 +341,8 @@ function getBreadCrumb($class_first) {
 	$form_bread_crum .= '<li title="' . gettext('Minimize This Form') . '" ><j  id="ino-minimize-form" class="ajax-link ino-minimize-form clickable " ><i class="fa fa-minus"></i></j></li>';
 	$form_bread_crum .= "<li title=\"" . gettext('Navigate to') . ' ' . gettext('Dashboard') . "\" >" . '<a  class="ajax-link" href="' . HOME_URL . 'form.php?class_name=user_dashboard_v"><i class="fa fa-dashboard"></i> </a></li>';
 	if ($module_description != null) {//The ino_user module_name is not listed in user_dashvoard_v::$icon_stmt_a, so due to $module_description being null, gettext retrieves garbage.
-	 $form_bread_crum .= '<li title="' . gettext('Navigate to') . ' ' . gettext($module_description) . '" ><a  class="ajax-link" href="' . HOME_URL . 'form.php?module_code=' . $module_name . '">' . gettext($module_name_c) . ' </a></li>';
-	} else {
+	 $form_bread_crum .= '<li title="' . gettext('Navigate to') . ' ' . gettext($module_description) . '" ><a  class="ajax-link" href="' . HOME_URL . 'form.php?module_code=' . $module_name . '">' . gettext($module_name_c) . ' </a></li>'; }
+	else {
 	 $form_bread_crum .= '<li title="' . gettext('Navigate to') . ' ' . '' . '" ><a  class="ajax-link" href="' . HOME_URL . 'form.php?module_code=' . $module_name . '">' . gettext($module_name_c) . ' </a></li>';
 	}
 	$form_bread_crum .= '</ul>';
@@ -479,9 +468,9 @@ function check_browser() {
 function ino_inline_action($line_id_cb_val, $hidden_field_a = '', $add_image_class = 'add_row_img', $line_id_cb = 'line_id_cb') {
  global $f;
  $ret_stmt = ' <ul class="inline_action">
-           <li class="' . $add_image_class . ' clickable"> <i class="fa fa-plus-circle" title="' . gettext('Add New Line') . '"></i> </li>
-           <li class="remove_row_img clickable"> <i class="fa fa-minus-circle" title="' . gettext('Remove This Line') . '"></i> </li>';
- $ret_stmt .= '<li><input class="clickable" type="checkbox" name="' . $line_id_cb . '" value="' . $line_id_cb_val . '" title="' . gettext('Process This Line') . '"></li>';
+           <li class="' . $add_image_class . ' clickable"> <i class="fa fa-plus-circle" title="'.  gettext('Add New Line').'"></i> </li>
+           <li class="remove_row_img clickable"> <i class="fa fa-minus-circle" title="'.  gettext('Remove This Line').'"></i> </li>';
+ $ret_stmt .= '<li><input class="clickable" type="checkbox" name="' . $line_id_cb . '" value="' . $line_id_cb_val . '" title="'.  gettext('Process This Line').'"></li>';
  $ret_stmt .= '<li class="hidden">';
  if (!empty($hidden_field_a)) {
 	foreach ($hidden_field_a as $k => $v) {
@@ -535,7 +524,7 @@ function ino_access_denied($msg = '') {
 	$stmt .= '<p class="lead">' . $msg . '</p>';
  }
 
- $stmt .= '</div>
+ $stmt .='</div>
  </div>';
  return $stmt;
 }
@@ -637,14 +626,14 @@ function ino_show_debug_msg($simple_msg, $detailed_msg = '', $sql = '', $file_li
  $return_stmt = $simple_msg;
 
  if (!empty($ino_user_i) && $ino_user_i->debug_mode == 2) {
-	$return_stmt .= '<br>' . $detailed_msg;
-	$return_stmt .= '<br>' . $sql;
- } else if (!empty($ino_user_i) && $ino_user_i->debug_mode == 3) {
-	$return_stmt .= '<br>' . $detailed_msg;
-	$return_stmt .= '<br>' . $file_line_msg;
-	$return_stmt .= '<br>' . $sql;
+	$return_stmt .= '<br>'. $detailed_msg;
+	$return_stmt .= '<br>'. $sql;
+ }else if (!empty($ino_user_i) && $ino_user_i->debug_mode == 3) {
+	$return_stmt .= '<br>'. $detailed_msg;
+	$return_stmt .= '<br>'. $file_line_msg;
+	$return_stmt .= '<br>'. $sql;
  }
-
+ 
  return $return_stmt;
 }
 
@@ -698,8 +687,8 @@ function ino_getSearch() {
 	if (!empty($per_page)) {
 	 global $pagination;
 	 $pagination = new pagination($pageno, $per_page, $total_count);
-	 $sql .= " LIMIT {$per_page} ";
-	 $sql .= " OFFSET {$pagination->offset()}";
+	 $sql .=" LIMIT {$per_page} ";
+	 $sql .=" OFFSET {$pagination->offset()}";
 	}
 
 	echo "<br><br><br>sql is $sql";
@@ -752,7 +741,7 @@ function thisPage_url() {
 }
 
 function select_per_page($per_page = '10') {
- $link = htmlentities($_SERVER['PHP_SELF']) . '?';
+ $link = $_SERVER['PHP_SELF'] . '?';
  $content_string = '<div class="noOfcontents " >';
  $content_string .= '<select name="per_page" class="per_page small">';
  $content_string .= '<option value="3" ';
@@ -1377,38 +1366,20 @@ function search_org_name() {
  return $stmt;
 }
 
-function search_schedule_ship_date() {
- global $f;
- $stmt = $f->date_fieldAnyDay('schedule_ship_date', '');
- return $stmt;
-}
-
-function search_schedule_ship_date_gt() {
- global $f;
- $stmt = $f->date_fieldAnyDay_gt('schedule_ship_date', '');
- return $stmt;
-}
-
-function search_schedule_ship_date_lt() {
- global $f;
- $stmt = $f->date_fieldAnyDay_lt('schedule_ship_date', '');
- return $stmt;
-}
-
 function search_need_by_date() {
- global $f;
+ global $f; 
  $stmt = $f->date_fieldAnyDay('need_by_date', '');
  return $stmt;
 }
 
 function search_need_by_date_gt() {
- global $f;
+ global $f; 
  $stmt = $f->date_fieldAnyDay_gt('need_by_date', '');
  return $stmt;
 }
 
 function search_need_by_date_lt() {
- global $f;
+ global $f; 
  $stmt = $f->date_fieldAnyDay_lt('need_by_date', '');
  return $stmt;
 }
@@ -1564,7 +1535,7 @@ function search_date() {
  global $f;
 
  $stmt = $f->date_fieldAnyDay('user_entered_date', '');
- $stmt .= '&nbsp;&nbsp; <label> Use System Date </label>';
+ $stmt .= '&nbsp;&nbsp; <label> ' . gettext("Use System Date") . ' </label>';
  $stmt .= $f->checkBox_field('use_sys_date_cb', '');
  return $stmt;
 }
@@ -1656,14 +1627,14 @@ function adjustment_ac_id() {
 
 function search_item_id_to() {
  $stmt = '<input id="item_id_to" class="textfield select_item_id item_id_to" '
-				 . 'type="text" title="" placeholder="To Item Id" size="20" maxlength="256" value="" '
+				 . 'type="text" title="" placeholder="' . gettext("To Item Id") .'" size="20" maxlength="256" value="" '
 				 . 'name="to_item_id" >';
  return $stmt;
 }
 
 function search_item_id_m_to() {
  $stmt = '<input id="to_item_id_m" class="val_field textfield vf_select_item_number to_item_id_m item_id_m_to" 
-                type="text" data-toggle="tooltip" title="Select To Item Id" data-val_field="item" data-val_value="item_id_m" 
+                type="text" data-toggle="tooltip" title="' . gettext("Select To Item Id") . '" data-val_field="item" data-val_value="item_id_m" 
                 size="20" value="" name="to_item_id_m">
 <i class="generic g_select_item_number select_popup clickable fa fa-search" data-class_name="item" style="display: inline-block;"></i>';
 
@@ -1698,20 +1669,20 @@ function search_item_number_to() {
 
 function search_project_number_from() {
  $stmt = '<input id="project_number_from" class="val_field textfield vf_select_project_number_from project_number project_number_from" 
-                type="text" data-toggle="tooltip" title="Select From Project Number" data-val_field="prj_project_header" data-val_value="project_number" 
+                type="text" data-toggle="tooltip" title="' . gettext("Select From Project Number") . '" data-val_field="prj_project_header" data-val_value="project_number" 
                 size="20" value="" name="project_number_from">
                 <input class="hidden popup_value prj_project_header_id prj_project_header_id_from" type="hidden" value="" name="prj_project_header_id_from[]">
-                <input class="hidden popup_value approval_status" type="hidden" value="APPROVED" name="approval_status[]">
+                <input class="hidden popup_value approval_status" type="hidden" value="' . gettext("APPROVED") . '" name="approval_status[]">
 <i class="generic g_select_project_number select_popup clickable fa fa-search set_value_for_one_field" data-class_name="prj_project_header" style="display: inline-block;"></i>';
  return $stmt;
 }
 
 function search_project_number_to() {
  $stmt = '<input id="project_number_to" class="val_field textfield vf_select_project_number_to project_number project_number_to" 
-                type="text" data-toggle="tooltip" title="Select To Project Number" data-val_field="prj_project_header" data-val_value="project_number" 
+                type="text" data-toggle="tooltip" title="' . gettext("Select To Project Number") . '" data-val_field="prj_project_header" data-val_value="project_number" 
                 size="20" value="" name="project_number_to">
                 <input class="hidden popup_value prj_project_header_id prj_project_header_id_to" type="hidden" value="" name="prj_project_header_id_to[]">
-                <input class="hidden popup_value approval_status" type="hidden" value="APPROVED" name="approval_status[]">
+                <input class="hidden popup_value approval_status" type="hidden" value="' . gettext("APPROVED") . '" name="approval_status[]">
 <i class="generic g_select_project_number select_popup clickable fa fa-search set_value_for_one_field" data-class_name="prj_project_header" style="display: inline-block;"></i>';
  return $stmt;
 }
@@ -1732,7 +1703,7 @@ function search_payroll() {
 function add_new_search_criteria() {
  if (!empty($_GET["new_search_criteria"])) {
 	$new_search_criteria = $_GET["new_search_criteria"];
-	$new_search_criteria_statment = "<li><label> $new_search_criteria  : </label>";
+	$new_search_criteria_statment = "<li><label>" . gettext($new_search_criteria) . ": </label>";
 	$new_search_criteria_statment .= "<input type=\"search\" name=\"$new_search_criteria\" id=\"$new_search_criteria\" 
                                           value=\"\"  maxlength=\"50\" >";
 	echo "$new_search_criteria_statment";
@@ -1740,17 +1711,14 @@ function add_new_search_criteria() {
 }
 
 function ino_attachement($file, $file_name = 'attachments') {
- global $f;
  $stmt = '<div id="show_attachment" class="show_attachment">
   <div id="file_upload_form" class="form-group">
    <ul class="inRow asperWidth">
     <li class="btn btn-info active inline input_file clickable" role="button">
      <input id="attachments" class="input_file_btn clickable" type="file" multiple="" name="' . $file_name . '[]"></input>
      <i class="fa fa-paperclip clickable"> &nbsp;&nbsp;&nbsp;</i>' . gettext('Select File') . ' </li>
-		 <li><input name="description[]" value="" maxlength="256" size="20" class="textfield description height_30" placeholder="File Name / Description" id="description" title="" data-toggle="tooltip" type="text">';
- $stmt .= '<li>' . $f->select_field_from_object('extn_folder_id', extn_folder::find_all(), 'extn_folder_id', 'folder', '', 'extn_folder_id', 'height_30') . '</li>';
- $stmt .= '<li> <button  form="file_upload" name="attach_submit" id="attach_submit" class="btn btn-info active submit button">' . gettext('Attach') . '</button></li>';
- $stmt .= '<li class="show_loading_small"><img alt="Loading..." src="' . HOME_URL . 'themes/images/small_loading.gif"/></li>
+    <li> <button  form="file_upload" name="attach_submit" id="attach_submit" class="btn btn-info active submit button">' . gettext('Attach') . '</button></li>';
+ $stmt.='<li class="show_loading_small"><img alt="Loading..." src="' . HOME_URL . 'themes/images/small_loading.gif"/></li>
    </ul>
    <div class="uploaded_file_details"></div>
   </div>';
@@ -1765,14 +1733,14 @@ function execution_time($only_value = false) {
  if ($only_value) {
 	return (microtime(true) - $start_time);
  } else {
-	echo "<br />Execution time :" . (microtime(true) - $start_time) . "</br>";
+	echo "<br />" . gettext("Execution time") . " :" . (microtime(true) - $start_time) . "</br>";
  }
 }
 
 function show_download_button($result_data) {
  $return_stmt = '<div id="searchResultMessages">';
- $return_stmt .= '<ul class="inline_list"><li>';
- $return_stmt .= '<h3>' . gettext('Total Records') . ' : ' . count($result_data) . '</h3></li>';
+ $return_stmt .='<ul class="inline_list"><li>';
+ $return_stmt .='<h3>' . gettext('Total Records') . ' : ' . count($result_data) . '</h3></li>';
  $return_stmt .= '<li>';
  $result_data_all = json_decode(json_encode($result_data), true);
  $return_stmt .= '<form action="' . HOME_URL . 'download.php"  method="POST" name="download_all" id="download_all" target="_blank">';
@@ -1794,7 +1762,7 @@ function show_download_button($result_data) {
 function show_download_button_inSelectFormat($result_data_query, $total_count = 0, $total_count_all = 0, $data_type = null) {
  global $f;
  $return_stmt = '<div id="searchResultMessages">';
- $return_stmt .= '<ul class="inline_list">';
+ $return_stmt .='<ul class="inline_list">';
  $return_stmt .= '<li>';
  $result_data_all = json_decode(json_encode($result_data_query), true);
  $return_stmt .= '<form action="' . HOME_URL . 'download.php"  method="POST" name="download_all" id="download_all" target="_blank">';
@@ -1811,11 +1779,11 @@ function show_download_button_inSelectFormat($result_data_query, $total_count = 
  $return_stmt .= '<li id="export_excel_searchResult" class="clickable" title="' . gettext('Export to Excel') . '"><i class="fa fa-file-excel-o"></i></li>
    <li id="print_searchResult" class="print clickable" title="' . gettext('Print') . '"><i class="fa fa-print"></i></li>';
  if (!empty($total_count)) {
-	$return_stmt .= '  <li><button class="btn btn-primary" type="button">' . gettext('Accessible Records') . '<span class="badge">' . $total_count . '</span></button></li>
-   <li><button class="btn btn-warning" type="button">' . gettext('Total Records') . ' ' . '<span class="badge">' . $total_count_all . '</span></button></li>';
+	$return_stmt .= '  <li><button class="btn btn-primary" type="button">' . gettext('Accessible Records') .'<span class="badge">' . $total_count . '</span></button></li>
+   <li><button class="btn btn-warning" type="button">' . gettext('Total Records') . ' ' .'<span class="badge">' . $total_count_all . '</span></button></li>';
  }
 
- $return_stmt .= '</ul>
+ $return_stmt .='</ul>
  </div>';
  return $return_stmt;
 }
@@ -1835,7 +1803,7 @@ function ino_include_css() {
 function xxshow_download_button_inSelectFormat($result_data, $total_count = 0, $total_count_all = 0) {
  global $f;
  $return_stmt = '<div id="searchResultMessages">';
- $return_stmt .= '<ul class="inline_list">';
+ $return_stmt .='<ul class="inline_list">';
  $return_stmt .= '<li>';
  $result_data_all = json_decode(json_encode($result_data), true);
  $return_stmt .= '<form action="' . HOME_URL . 'download.php"  method="POST" name="download_all" id="download_all" target="_blank">';
@@ -1846,11 +1814,11 @@ function xxshow_download_button_inSelectFormat($result_data, $total_count = 0, $
  $return_stmt .= '<li id="export_excel_searchResult" class="clickable" title="' . gettext('Export to Excel') . '"><i class="fa fa-file-excel-o"></i></li>
    <li id="print_searchResult" class="print clickable" title="' . gettext('Print') . '"><i class="fa fa-print"></i></li>';
  if (!empty($total_count)) {
-	$return_stmt .= '  <li><button class="btn btn-primary" type="button">' . gettext('Accessible Records') . '<span class="badge">' . $total_count . '</span></button></li>
-   <li><button class="btn btn-warning" type="button">' . gettext('Total Records') . ' ' . '<span class="badge">' . $total_count_all . '</span></button></li>';
+	$return_stmt .= '  <li><button class="btn btn-primary" type="button">' . gettext('Accessible Records') .'<span class="badge">' . $total_count . '</span></button></li>
+   <li><button class="btn btn-warning" type="button">' . gettext('Total Records') . ' ' .'<span class="badge">' . $total_count_all . '</span></button></li>';
  }
 
- $return_stmt .= '</ul>
+ $return_stmt .='</ul>
  </div>';
  return $return_stmt;
 }
@@ -1967,7 +1935,7 @@ function array2worddoc(array &$array) {
 	foreach ($data as $key => $value) {
 	 $each_para .= "<br> $key : $value";
 	}
-	$each_para .= '<br><br>';
+	$each_para .='<br><br>';
 	array_push($ino_data_a, $each_para);
  }
  ob_start();
@@ -2069,7 +2037,7 @@ function searching_tips() {
  $stmt .= '<br>Ex : Supplier name inoerp in supplier field \'ll show all results such as ainoerp, aainoerp, inoerpa, etc';
  $stmt .= '<br>=inoerp in supplier field \'ll show only inoerp </li>';
  $stmt .= '<li>2. Use > for searching values greater than entered value. </li>';
- $stmt .= '<li>3. Use < for searching values less than entered value. </li>';
+ $stmt .='<li>3. Use < for searching values less than entered value. </li>';
  $stmt .= '<li>4. Use != for searching all values not equal to entered value. </li>';
  $stmt .= '<li>5. Use comma(, ) for searching multiple values. </li>';
  $stmt .= '<li>5. Use one < field & one > field for searching all values in between two values. </li>';
@@ -2265,7 +2233,6 @@ function ino_recent_visits() {
 		break;
 	 }
 	 if (!is_numeric($k)) {
-		$k = htmlentities($k);
 		$recent_visit .= '<li><a href="' . htmlspecialchars($v) . '">' . str_replace('_', ' ', substr($k, 0, 30)) . '</a>';
 	 } else {
 		$recent_visit .= '<li><a href="' . htmlspecialchars($v) . '"> Vsiti ' . $k . '</a>';
@@ -2319,16 +2286,15 @@ function ino_plain_text($text) {
 
 function update_htaccessFile() {
  $return = false;
- $file_link = WWW_DIR . DS . 'engine/install/.htaccess';
+ $file_link = HOME_DIR . DS . 'engine/install/.htaccess';
  if (is_readable($file_link)) {
 	$hta_file = fopen($file_link, 'rb');
 	$file_content = fread($hta_file, filesize($file_link));
  } else {
 	echo "<h2>.htaccess file is missing in engine/install/ </h2>";
-	return false;
  }
 
- $write_file_link = WWW_DIR . DS . '.htaccess';
+ $write_file_link = HOME_DIR . DS . '.htaccess';
 
  if (is_writable($write_file_link)) {
 	$write_file = fopen($write_file_link, 'wb');
@@ -2451,17 +2417,17 @@ function ino_upload_error_msg($msg_code) {
  return $rtn_msg;
 }
 
-function inoToken($length = 32) {
+function inoToken($length = 32){
 
- if (function_exists('random_bytes')) {
-	return bin2hex(random_bytes($length));
- }
- if (function_exists('mcrypt_create_iv')) {
-	return bin2hex(mcrypt_create_iv($length, MCRYPT_DEV_URANDOM));
- }
- if (function_exists('openssl_random_pseudo_bytes')) {
-	return bin2hex(openssl_random_pseudo_bytes($length));
- }
+    if (function_exists('random_bytes')) {
+        return bin2hex(random_bytes($length));
+    }
+    if (function_exists('mcrypt_create_iv')) {
+        return bin2hex(mcrypt_create_iv($length, MCRYPT_DEV_URANDOM));
+    } 
+    if (function_exists('openssl_random_pseudo_bytes')) {
+        return bin2hex(openssl_random_pseudo_bytes($length));
+    }
 }
 
 function ino_topbar_login() {
@@ -2472,13 +2438,13 @@ function ino_topbar_login() {
           <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"><i class="fa fa-user"> </i> ' . ucfirst($_SESSION['username']) . ' <span class="caret"></span></button>';
 	$stmt .= $menu_line->show_menu_list(2);
 	;
-	$stmt .= '</div>';
+	$stmt .='</div>';
 	echo $stmt;
  } else {
 	if (file_exists(THEME_DIR . '/template/user_popup_login_template.php')) {
 	 require_once(THEME_DIR . '/template/user_popup_login_template.php');
 	} else {
-	 include_once WWW_DIR . '/extensions/ino_user/popup_login/user_popup_login_template.php';
+	 include_once HOME_DIR . '/extensions/ino_user/popup_login/user_popup_login_template.php';
 	}
  }
 }
