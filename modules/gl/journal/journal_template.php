@@ -127,7 +127,7 @@ if (!isset($readonly1)) {
          </td>
          <td><?php form::text_field_wid2sr('gl_journal_line_id'); ?></td>
          <td><?php $f->seq_field_d($count); ?></td>
-         <td><?php echo form::text_field('line_num', $$class_second->line_num, '8', '20', 1, 'Auto no', '', $readonly, 'lines_number'); ?></td>
+         <td><?php echo form::text_field('line_num', $$class_second->line_num, '8', '20', 1, gettext('Auto no'), '', $readonly, 'lines_number'); ?></td>
          <td><?php $f->ac_field_wid2('code_combination_id', 'dontCopy'); ?> </td>
          <td><?php form::number_field_wid2('total_dr'); ?></td>
          <td><?php form::number_field_wid2('total_cr'); ?></td>

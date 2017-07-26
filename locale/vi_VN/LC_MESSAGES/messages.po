@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2015-03-08 23:59+0800\n"
-"PO-Revision-Date: 2017-07-13 08:47+0700\n"
+"PO-Revision-Date: 2017-07-13 08:57+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -242,10 +242,10 @@ msgid "Supplier Number"
 msgstr "Mã nhà cung cấp"
 
 msgid "Supplier Site Name"
-msgstr "Tên địa điểm nhà cung cấp"
+msgstr "Tên địa chỉ nhà cung cấp"
 
 msgid "Supplier Site Number"
-msgstr "Mã địa điểm"
+msgstr "Mã địa chỉ"
 
 msgid "From Bank Line Id"
 msgstr "Từ mức tín dụng"
@@ -572,7 +572,7 @@ msgid "Site Contact Id"
 msgstr "Hợp đồng"
 
 msgid "Customer Site Attachement Id"
-msgstr "Đính kèm theo địa điểm khách hàng"
+msgstr "Đính kèm theo địa chỉ khách hàng"
 
 msgid "Bank Id"
 msgstr "Ngân hàng"
@@ -605,10 +605,10 @@ msgid "Ar Customer Site Id"
 msgstr "Địa điểm khách hàng"
 
 msgid "Customer Site Number"
-msgstr "Mã địa điểm khách hàng"
+msgstr "Mã địa chỉ khách hàng"
 
 msgid "Customer Site Name"
-msgstr "Tên địa điểm khách hàng"
+msgstr "Tên địa chỉ khách hàng"
 
 msgid "Site Tax Country"
 msgstr "Thuế địa phương"
@@ -623,13 +623,13 @@ msgid "Site Tax Code"
 msgstr "Mã thuế tại chỗ"
 
 msgid "Customer Site Ref"
-msgstr "Diễn giải địa điểm khách hàng"
+msgstr "Diễn giải địa chỉ khách hàng"
 
 msgid "Customer Site Type"
-msgstr "Loại địa điểm khách hàng"
+msgstr "Loại địa chỉ khách hàng"
 
 msgid "Site Status"
-msgstr "Trạng thái địa điểm"
+msgstr "Trạng thái địa chỉ"
 
 msgid "Ar Receipt Header Id"
 msgstr "Tiêu đề tiếp nhận khoản phải thu"
@@ -983,7 +983,7 @@ msgid "Department"
 msgstr "Phòng ban"
 
 msgid "Location Id"
-msgstr "Id địa điểm"
+msgstr "Vị trí"
 
 msgid "Department Type"
 msgstr "Loại phòng"
@@ -1181,7 +1181,7 @@ msgid "Lead Time Percentage"
 msgstr "Lead Time Percentage"
 
 msgid "Count Point Cb"
-msgstr "Đếm địa điểm"
+msgstr "Cho phép đếm"
 
 msgid "Auto Charge Cb"
 msgstr "Phí tự động"
@@ -1778,7 +1778,7 @@ msgid "Ap Supplier Id"
 msgstr "Id nhà cung cấp phải trả"
 
 msgid "Ap Supplier Site Id"
-msgstr "Id địa điểm nhà cung cấp phải trả"
+msgstr "Id địa chỉ nhà cung cấp phải trả"
 
 msgid "Warrranty Number"
 msgstr "Mã bảo hành"
@@ -3272,7 +3272,7 @@ msgid "Implementation Date"
 msgstr "Ngày thực hiện"
 
 msgid "Inv Location Default Id"
-msgstr "Id  địa điểm tồn kho mặc định"
+msgstr "Vị trí tồn kho mặc định"
 
 msgid "Default Type"
 msgstr "Loại mặc định"
@@ -3854,7 +3854,7 @@ msgid "Mdm Bank Header Id"
 msgstr "Id ngân hang giao dịch"
 
 msgid "Mdm Bank Site Id"
-msgstr "Id địa điểm ngân hàng giao dịch"
+msgstr "Địa chỉ ngân hàng giao dịch"
 
 msgid "Account Number"
 msgstr "Mã tài khoản"
@@ -4205,7 +4205,7 @@ msgid "Invoice Match Type"
 msgstr "Invoice Match Type"
 
 msgid "Ship To Location Id"
-msgstr "Giao hàng đến địa điểm"
+msgstr "Giao hàng đến vị trí"
 
 msgid "Ref Po Header Id"
 msgstr "Ref Po Header Id"
@@ -4409,7 +4409,7 @@ msgid "Allow Negative Onhand Cb"
 msgstr "Allow Negative Onhand Cb"
 
 msgid "Customer Site Id"
-msgstr "Id địa điểm khách hàng"
+msgstr "Địa chỉ khách hàng"
 
 msgid "Pos Terminal Id"
 msgstr "Pos Terminal Id"
@@ -4748,7 +4748,7 @@ msgid "Default Home Page"
 msgstr "Default Home Page"
 
 msgid "Site Name"
-msgstr "Tên địa điểm"
+msgstr "Tên địa chỉ"
 
 msgid "Maintenance Cb"
 msgstr "Maintenance Cb"
@@ -4886,10 +4886,10 @@ msgid "Org Billto Id"
 msgstr "Org Billto Id"
 
 msgid "Supplier Site Ref"
-msgstr "Diễn giải địa điểm nhà cung cấp"
+msgstr "Diễn giải địa chỉ nhà cung cấp"
 
 msgid "Supplier Site Type"
-msgstr "Loại địa điểm nhà cung cấp"
+msgstr "Loại địa chỉ nhà cung cấp"
 
 msgid "Allow Substitute Receipts Cb"
 msgstr "Allow Substitute Receipts Cb"
@@ -6395,7 +6395,7 @@ msgid "Mass Upload Customer Site"
 msgstr "Mass Upload Customer Site"
 
 msgid "Upload Customer Site"
-msgstr "Upload địa điểm khách hàng"
+msgstr "Upload địa chỉ khách hàng"
 
 msgid "Account Receviable Transactions"
 msgstr "Account Receviable Transactions"
@@ -6968,10 +6968,10 @@ msgid "Search Contents"
 msgstr "Tìm kiếm nội dung"
 
 msgid "Basis Site Information"
-msgstr "Thông tin địa điểm cơ sở"
+msgstr "Thông tin địa chỉ cơ sở"
 
 msgid "Site Information"
-msgstr "Thông tin địa điểm"
+msgstr "Thông tin địa chỉ"
 
 msgid "Price List Header"
 msgstr "Tiêu đề danh sách giá"
@@ -7673,7 +7673,7 @@ msgid "WOL Transaction"
 msgstr "WOL Transaction"
 
 msgid "Site Search"
-msgstr "Tìm địa điểm"
+msgstr "Tìm địa chỉ"
 
 msgid "Search WOL Transaction"
 msgstr "Search WOL Transaction"
@@ -7817,7 +7817,7 @@ msgid "Location Default"
 msgstr "Địa điểm mặc định"
 
 msgid "Search Location Default"
-msgstr "Tìm địa điểm mặc định"
+msgstr "Tìm địa chỉ mặc định"
 
 msgid "Physical Store"
 msgstr "Physical Store"
@@ -8099,7 +8099,7 @@ msgid "Corporate Address Id"
 msgstr "Corporate Address Id"
 
 msgid "Supplier Site Details"
-msgstr "Chi tiết địa điểm nhà cung cấp"
+msgstr "Chi tiết địa chỉ nhà cung cấp"
 
 msgid "Receiving"
 msgstr "Tiếp nhận"
@@ -8183,7 +8183,7 @@ msgid "Customer Type "
 msgstr "Customer Type "
 
 msgid "Customer Site Details"
-msgstr "Chi tiết địa điểm khách hàng"
+msgstr "Chi tiết địa chỉ khách hàng"
 
 msgid "Sales"
 msgstr "Bán"
@@ -9056,7 +9056,7 @@ msgid "Safety Stock"
 msgstr "Chứng khoán an toàn"
 
 msgid "Item Transaction Location Default"
-msgstr "Mặc định địa điểm giao dịch vật tư"
+msgstr "Mặc định vị trí giao dịch vật tư"
 
 msgid "Location Defaults"
 msgstr "Địa điểm mặc định"
@@ -9131,7 +9131,7 @@ msgid "New Received Qty"
 msgstr "Số lượng nhận mới"
 
 msgid "Site Id"
-msgstr "Id địa điểm"
+msgstr "Địa chỉ"
 
 msgid "Site #"
 msgstr "Địa điểm #"
@@ -10046,7 +10046,7 @@ msgid "Related Products"
 msgstr "Related Products"
 
 msgid "Stores & Sites"
-msgstr "Cửa hàng & địa điểm"
+msgstr "Cửa hàng & địa chỉ"
 
 msgid "Reviews"
 msgstr "Xem lại"
@@ -10418,7 +10418,7 @@ msgid "HR Locations"
 msgstr "HR Locations"
 
 msgid "Location Details"
-msgstr "Chi tiết địa điểm"
+msgstr "Chi tiết vị trí"
 
 msgid "Print"
 msgstr "In"
@@ -11021,7 +11021,7 @@ msgid "Print Delivery"
 msgstr "In giao hàng"
 
 msgid "Site Number"
-msgstr "Mã địa điểm"
+msgstr "Mã địa chỉ"
 
 msgid "No business organization found. Please enter a business org name in the quote"
 msgstr "No business organization found. Please enter a business org name in the quote"

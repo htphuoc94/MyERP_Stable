@@ -4,8 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/F:/xampp/htdocs/MyERP/multi_select.php</file>
-            <file>file:/F:/xampp/htdocs/MyERP/includes/template/json_program_template.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/gl/coa/class_coa.inc</file>
+            <file>file:/F:/xampp/htdocs/MyERP/search.php</file>
+            <file>file:/F:/xampp/htdocs/MyERP/includes/template/json_search_template.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/so/class_sd_so_header.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/pick_list/pick_list.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/includes/functions/functions.inc</file>
@@ -14,21 +15,21 @@
             <file>file:/F:/xampp/htdocs/MyERP/modules/gl/journal/class_gl_journal_header.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/lead/class_sd_lead.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/gl/journal/journal_template.php</file>
+            <file>file:/F:/xampp/htdocs/MyERP/locale/vi_VN/LC_MESSAGES/messages.po</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/so/class_sd_so_line.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/lead/lead.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sys/option/class.option_header.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/gl/coa_combination/class_coa_combination.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/pick_list/class_sd_pick_list_v.inc</file>
-            <file>file:/F:/xampp/htdocs/MyERP/includes/general_class/class.search.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/includes/template/json_multi_select_template.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/so/so_template.php</file>
+            <file>file:/F:/xampp/htdocs/MyERP/modules/sd/delivery/class_sd_delivery_header.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/gl/coa_combination/coa_combination_template.php</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/pick_list/pick_list.js</file>
             <file>file:/F:/xampp/htdocs/MyERP/includes/general_class/class_inoform.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/so_all/class_sd_so_all_v.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/lead/lead_template.php</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/sd/pick_list/pick_list.css</file>
-            <file>file:/F:/xampp/htdocs/MyERP/includes/template/json_form_template.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/includes/template/json_select_template.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/gl/calendar/class_gl_calendar.inc</file>
             <file>file:/F:/xampp/htdocs/MyERP/modules/gl/calendar/calendar_template.php</file>

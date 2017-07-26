@@ -149,7 +149,7 @@ class sd_delivery_header extends dbObject {
  public function _before_save() {
 //  pa($this);
   if (($this->action == 'sales_order_picking')) {
-   echo "<br> Starting Sales Line Picking.";
+   echo "<br>" . gettext("Starting Sales Line Picking.");
    $this->_create_delivery();
    return 10;
   } else if (($this->action == 'COMPLETE_SHIPMENT')) {
@@ -159,7 +159,7 @@ class sd_delivery_header extends dbObject {
    $this->status = 'AWAITING_SHIPPING';
    return;
   } else if (!empty($this->sd_delivery_header_id)) {
-   echo "<br>No header update";
+   echo "<br>" . gettext("No header update");
    return 10;
   }
  }
@@ -171,7 +171,7 @@ class sd_delivery_header extends dbObject {
   $dh->delivery_date = date("Y-m-d");
   $dh->status = 'AWAITING_SHIPPING';
   $dh->save();
-  echo "<br> Delivery header is succefully created. Header Id/Delivery Number - " . $dh->sd_delivery_header_id;
+  echo "<br>" . gettext("Delivery header is succefully created. Header Id/Delivery Number - ") . $dh->sd_delivery_header_id;
   $dh->delivery_number = $dh->sd_delivery_header_id;
 
   return $dh->sd_delivery_header_id;
@@ -205,7 +205,7 @@ class sd_delivery_header extends dbObject {
     $picked_qty = !empty($_POST['pick_quantity'][$i]) ? $_POST['pick_quantity'][$i] : $_POST['line_quantity'][$i];
     //verify if requested quantity is more than onhand quantity
     if (($picked_qty > $_POST['onhand'][$i]) && empty($_POST['kit_cb'][$i])) {
-     echo "<span class='alert alert-warning'> Picked Quantity " . $picked_qty . ' is more than total available quantity ' .
+     echo "<span class='alert alert-warning'>" . gettext("Picked Quantity") . " " . $picked_qty . ' ' . gettext("is more than total available quantity") .
      $_POST['onhand'][$i] . '</span>';
      $dbc->rollback = true;
      break;
@@ -274,7 +274,7 @@ class sd_delivery_header extends dbObject {
     }
 
     $sol->save();
-    echo "<br> Delivery Line is succefully created. Line Id - " . $del_line->sd_delivery_line_id;
+    echo "<br>" . gettext("Delivery Line is succefully created. Line Id - ") . $del_line->sd_delivery_line_id;
 
     //create reservation
     $del_line->sn_ids_a = $this->delivery_line_sn_ids_a;
@@ -442,7 +442,7 @@ class sd_delivery_header extends dbObject {
      if (!empty($reservationid_qty_a)) {
       $res->remove_reservation($reservationid_qty_a);
      }
-     echo "<br> Reservation is removed ";
+     echo "<br>" . gettext("Reservation is removed");
     } catch (Exception $e) {
      $dbc->rollback = true;
      echo "<br>Failed to remove the reservation. Error @ " . __FILE__ . ' @@ ' . __LINE__ . $e->getMessage();
@@ -463,8 +463,8 @@ class sd_delivery_header extends dbObject {
   if ((!empty($this->sd_delivery_header_id)) && empty($this->delivery_number)) {
    $sd_delivery_header_id = $this->sd_delivery_header_id;
    $org_id = $this->shipping_org_id;
-   $this->delivery_number = $org_id . '-' . $sd_delivery_header_id;
-   echo '<br/> System created delivery number is ' . $this->delivery_number;
+   $this->delivery_number = gettext($org_id) . '-' . gettext($sd_delivery_header_id);
+   echo '<br/>' . gettext("System created delivery number is ") . $this->delivery_number;
    $this->save();
   }
 
@@ -494,7 +494,7 @@ class sd_delivery_header extends dbObject {
  }
 
  public function multi_select_actions() {
-  $stmt = '<button class="pick_list button btn btn-success">Generate Pick List</button>';
+  $stmt = '<button class="pick_list button btn btn-success">' . gettext("Generate Pick List") . '</button>';
   return $stmt;
  }
 

@@ -21,7 +21,7 @@
   <div id="multi_<?php echo $class ?>">
    <?php
    if (!empty($multi_select_actions)) {
-    echo '<div class="well well-sm">' . $multi_select_actions . '</div>';
+    echo '<div class="well well-sm">' . gettext($multi_select_actions) . '</div>';
    }
    ?>
    <div id="tabsLine">
@@ -80,11 +80,11 @@
            }
            if (($i == 0) && ($multi_select_select_fields_header_not_shown) && !empty($multi_select_select_fields) && is_array($multi_select_select_fields)) {
             foreach ($multi_select_select_fields as $mssf_key => $mssf_val) {
-             echo '<th>' . ucwords(str_replace('_', ' ', $mssf_key)) . '</th>';
+             echo '<th>' . gettext(ucwords(str_replace('_', ' ', $mssf_key))) . '</th>';
             }
             $multi_select_select_fields_header_not_shown = false;
            }
-           echo '<th>' . ucwords(str_replace('_', ' ', $all_columns[$j])) . '</th>';
+           echo '<th>' . gettext(ucwords(str_replace('_', ' ', $all_columns[$j]))) . '</th>';
           }
           if (!empty($multi_select_tabs) && ($i == $no_of_tabs - 1)) {
            echo $multi_select_tabs['tab_header'];
@@ -99,7 +99,7 @@
           foreach ($search_result as $records) {
            $multi_select_select_fields_not_shown = true;
            ?>         
-           <tr class="multi_select_value_line<?php echo $count ?>">
+           <tr class="multi_select_value_line <?php echo $count ?>">
             <?php
             if ($i == 0) {
              if (isset($records->$primary_column_v)) {
@@ -115,13 +115,13 @@
              echo "<input type=\"hidden\" name=\"action\" class=\"hidden action\"  value=\"$action_message\">";
              echo!empty($hidden_field_stmt) ? $hidden_field_stmt : '';
             }
-            echo '</td><td>' . $records->$primary_column_v . '</td>';
+            echo '</td><td>' . gettext($records->$primary_column_v) . '</td>';
             if (!empty($multi_select_tabs) && ($i == $no_of_tabs - 1)) {
 //                 echo $multi_select_tabs;
              echo $multi_select_tabs['tab_row_content'];
             }
             if (($i == 0) && (!empty($multi_selct_input_fields) && !is_array($multi_selct_input_fields))) {
-             echo '<td>' . $multi_selct_input_fields . '</td>';
+             echo '<td>' . gettext($multi_selct_input_fields) . '</td>';
             }
             if (($i == 0) && ($multi_select_select_fields_not_shown) && !empty($multi_select_select_fields) && is_array($multi_select_select_fields)) {
              foreach ($multi_select_select_fields as $mssf_key => $mssf_val) {
